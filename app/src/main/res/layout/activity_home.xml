@@ -7,15 +7,136 @@
     android:background="@color/white"
     tools:context=".activities.SignInActivity">
 
-    <TextView
-        android:id="@+id/tvHomePage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="This is Home Page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteY="835dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:textStyle="bold"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="24dp">
+                </TextView>
+
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/cart"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="144dp">
+                </ImageButton>
+
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/bell"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp">
+                </ImageButton>
+
+                <ImageButton
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="@android:color/transparent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/location"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="0dp">
+                </ImageButton>
+
+            </LinearLayout>
+
+
+
+            <EditText
+                android:id="@+id/search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/search_bar"
+                android:ems="10"
+                android:hint="Search for..."
+                android:inputType="text"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:textColor="#7C7C7C"
+                android:textStyle="italic" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    
+                    <HorizontalScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="none">
+                        
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_marginTop="12dp"
+                                android:layout_marginBottom="12dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="200dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/banner1"
+                                    android:layout_width="320dp"
+                                    android:layout_height="match_parent"
+                                    android:paddingLeft="16dp"
+                                    android:paddingRight="16dp"
+                                    android:src="@drawable/banner_image"
+                                    android:contentDescription="special_product">
+                                </ImageView>
+
+                                <ImageView
+                                    android:id="@+id/banner2"
+                                    android:layout_width="320dp"
+                                    android:layout_height="match_parent"
+                                    android:paddingLeft="16dp"
+                                    android:paddingRight="16dp"
+                                    android:src="@drawable/banner_image2"
+                                    android:contentDescription="special_product">
+                                </ImageView>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -31,6 +152,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/bottom_nav_bar" />
+        app:menu="@menu/bottom_nav_bar" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
