@@ -1,7 +1,6 @@
 package com.delishstudio.delish.activities
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.delishstudio.delish.R
 
