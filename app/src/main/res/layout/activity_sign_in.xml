@@ -5,15 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".activities.SignActivity">
+    tools:context=".activities.SignActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="63dp">
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
-        android:textAlignment="center"
+        android:layout_marginBottom="16dp"
         android:fontFamily="@font/inria_serif_bold"
         android:text="Delish."
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="60dp"
         app:fontFamily="@font/inria_serif_bold"
@@ -37,7 +39,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.249" />
+        app:layout_constraintVertical_bias="0.221" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btSignUp"
@@ -54,13 +56,13 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btLogin"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="88dp"
         android:background="@drawable/rounded_green_button"
         android:fontFamily="@font/poppins"
         android:text="Login"
@@ -71,4 +73,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="175dp"
+        android:layout_height="169dp"
+        android:src="@drawable/food_image_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.114"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_width="166dp"
+        android:layout_height="178dp"
+        android:src="@drawable/food_image_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.824"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.415" />
 </androidx.constraintlayout.widget.ConstraintLayout>

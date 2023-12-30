@@ -1,12 +1,16 @@
 package com.delishstudio.delish
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.delishstudio.delish.activities.SignInActivity
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
 
-        setContentView(R.layout.activity_sign_in)
+        val intent = Intent(this, SignInActivity::class.java)
+        startActivity(intent)
     }
 }
