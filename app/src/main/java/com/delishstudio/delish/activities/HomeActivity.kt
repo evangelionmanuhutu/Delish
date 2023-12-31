@@ -23,8 +23,8 @@ class HomeActivity : AppCompatActivity() {
         _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        foodList.add(Food("Nasi Padang", "Gratis Ongkir", "Rp.10.000"))
-        foodList.add(Food("Donat", "Gratis Ongkir", "Rp.7.000"))
+        foodList.add(Food("Nasi Padang", "Gratis Ongkir | Halal", "Rp.10.000"))
+        foodList.add(Food("Donat", "Gratis Ongkir | 12 Porsi", "Rp.7.000"))
         foodList.add(Food("Ayam Lalapan", "Gratis Ongkir", "Rp.15.000"))
 
         for (food in foodList) {

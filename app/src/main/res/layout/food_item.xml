@@ -25,6 +25,7 @@
 
             <ImageButton
                 android:layout_width="32dp"
+                android:background="@color/green_dark"
                 android:layout_height="32dp"></ImageButton>
 
             <TextView
@@ -61,30 +62,36 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
 
-            <TextView
-                android:id="@+id/foodPriceTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:fontFamily="@font/poppins"
-                android:text='@{food.price, default="Rp.0.000"}'
-                android:textColor="@color/green_dark"
-                android:textSize="28dp"
-                android:textStyle="bold"></TextView>
+            <!-- Use RelativeLayout for price and buy button -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/foodBuyButton"
-                android:layout_width="62dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="100dp"
-                android:layout_weight="1"
-                android:layout_gravity="end"
-                android:background="@drawable/rounded_green_button"
-                android:fontFamily="@font/poppins"
-                android:text="Beli Sekarang"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textStyle="bold"></androidx.appcompat.widget.AppCompatButton>
+                <TextView
+                    android:id="@+id/foodPriceTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/poppins"
+                    android:text='@{food.price, default="Rp.0.000"}'
+                    android:textColor="@color/green_dark"
+                    android:textSize="28dp"
+                    android:textStyle="bold"></TextView>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/foodBuyButton"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:background="@drawable/rounded_green_button"
+                    android:fontFamily="@font/poppins"
+                    android:text="Beli Sekarang"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:layout_alignParentEnd="true"></androidx.appcompat.widget.AppCompatButton>
+            </RelativeLayout>
+
         </LinearLayout>
     </LinearLayout>
 
