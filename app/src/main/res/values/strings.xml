@@ -12,4 +12,14 @@
     </string>
     <string name="txt_btn_beli_sekarang">Beli Sekarang</string>
     <string name="txt_bg_food_item">bg_food_item</string>
+    <string name="txt_register">Register</string>
+    <string name="txt_sudah_punya_akun_yang_terdaftar">Sudah punya akun yang terdaftar?</string>
+    <string name="txt_tv_login">Login!</string>
+    <string name="hint_masukan_alamat_email">Masukan alamat email</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_password">Password</string>
+    <string name="hint_masukan_password">Masukan password</string>
+    <string name="tv_verifikasi_password">verifikasi password</string>
+    <string name="hint_verifikasi_password">Verifikasi password</string>
+    <string name="txt_login_with_google">Login with Google</string>
 </resources>
