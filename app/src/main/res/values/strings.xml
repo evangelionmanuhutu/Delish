@@ -3,4 +3,11 @@
     <string name="motto">food redistribution for a
         hunger-free tomorrow
     </string>
+    <string name="txt_login">Login</string>
+    <string name="txt_belum_punya_akun_yang_terdaftar">Belum punya akun yang terdaftar?</string>
+    <string name="txt_kamu_bisa">Kamu bisa</string>
+    <string name="txt_daftar">Daftar!</string>
+    <string name="btn_login">Login</string>
+    <string name="default_web_client_id">384504039049-fjj32rfjk4ifrcc1rq2dtncsr6hvpb4v.apps.googleusercontent.com
+    </string>
 </resources>
