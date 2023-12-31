@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Delish"
         tools:targetApi="31">
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.auth.LoginActivity"
             android:exported="false"/>
         <activity
             android:name=".MainActivity"
