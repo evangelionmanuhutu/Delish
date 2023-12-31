@@ -24,10 +24,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.auth.LoginActivity"
+            android:name=".view.activities.auth.LoginActivity"
             android:exported="false"/>
-        <activity android:name=".activities.auth.SignInActivity"/>
-        <activity android:name=".activities.HomeActivity"/>
+        <activity android:name=".view.activities.auth.SignInActivity"/>
+        <activity android:name=".view.activities.HomeActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

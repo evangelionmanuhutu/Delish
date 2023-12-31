@@ -2,7 +2,7 @@
     <data>
         <variable
             name="food"
-            type="com.delishstudio.delish.objects.Food" />
+            type="com.delishstudio.delish.model.Food"/>
     </data>
 
     <!-- Food Item List -->
@@ -25,8 +25,9 @@
 
             <ImageButton
                 android:layout_width="32dp"
+                android:layout_height="32dp"
                 android:background="@color/green_dark"
-                android:layout_height="32dp"></ImageButton>
+                android:contentDescription="@string/txt_bg_food_item"/>
 
             <TextView
                 android:id="@+id/foodNameTextView"
@@ -37,8 +38,8 @@
                 android:text='@{food.name, default="makanan"}'
                 android:textAllCaps="true"
                 android:textColor="@color/black_erie"
-                android:textSize="16dp"
-                android:textStyle="bold"></TextView>
+                android:textSize="16sp"
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -54,7 +55,7 @@
                 android:fontFamily="@font/poppins"
                 android:text='@{food.category, default="Gratis Ongkir"}'
                 android:textColor="@color/black_erie"
-                android:textStyle="bold"></TextView>
+                android:textStyle="bold"/>
         </LinearLayout>
 
         <LinearLayout
@@ -75,24 +76,22 @@
                     android:fontFamily="@font/poppins"
                     android:text='@{food.price, default="Rp.0.000"}'
                     android:textColor="@color/green_dark"
-                    android:textSize="28dp"
-                    android:textStyle="bold"></TextView>
+                    android:textSize="28sp"
+                    android:textStyle="bold"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/foodBuyButton"
                     android:layout_width="140dp"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
                     android:layout_gravity="end"
                     android:background="@drawable/rounded_green_button"
                     android:fontFamily="@font/poppins"
-                    android:text="Beli Sekarang"
+                    android:text="@string/txt_btn_beli_sekarang"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
-                    android:textStyle="bold"
-                    android:layout_alignParentEnd="true"></androidx.appcompat.widget.AppCompatButton>
+                    android:textStyle="bold"/>
             </RelativeLayout>
-
         </LinearLayout>
     </LinearLayout>
-
 </layout>

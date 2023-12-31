@@ -1,13 +1,12 @@
-package com.delishstudio.delish.activities
+package com.delishstudio.delish.view.activities
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityHomeBinding
-import com.delishstudio.delish.objects.Food
+import com.delishstudio.delish.model.Food
 
 class HomeActivity : AppCompatActivity() {
 
