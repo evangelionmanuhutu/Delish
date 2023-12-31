@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -65,12 +67,11 @@
             android:layout_above="@+id/bottom_navigation">
 
             <LinearLayout
+                android:id="@+id/parent_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 tools:layout_editor_absoluteY="835dp">
-
-
 
                 <EditText
                     android:id="@+id/search_bar"
@@ -145,7 +146,6 @@
                             android:layout_marginTop="8dp"
                             android:gravity="center"
                             android:orientation="horizontal">
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -219,7 +219,6 @@
                                     android:textStyle="bold"></TextView>
                             </LinearLayout>
                         </LinearLayout>
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -334,243 +333,8 @@
                             </Button>
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/items"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:padding="12dp"
-                            android:orientation="vertical">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:layout_gravity="center"
-                                android:orientation="horizontal">
 
-                                <ImageButton
-                                    android:layout_width="32dp"
-                                    android:layout_height="32dp">
-                                </ImageButton>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="Nasi Padang"
-                                    android:textSize="16dp"
-                                    android:textAllCaps="true"
-                                    android:layout_marginStart="12dp">
-                                </TextView>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppins"
-                                    android:text="12 Porsi"
-                                    android:textColor="@color/black_erie"
-                                    android:textStyle="bold"></TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="-">
-                                </TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="Gratis Minum">
-                                </TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textSize="16dp"
-                                    android:textColor="@color/black_erie"
-                                    android:text="-">
-                                </TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="Ambil di tempat">
-                                </TextView>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_marginTop="16dp"
-                                android:layout_height="wrap_content">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Rp.11.000"
-                                    android:textSize="28dp"
-                                    android:textColor="@color/green_dark"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold">
-                                </TextView>
-
-                                <androidx.appcompat.widget.AppCompatButton
-                                    android:layout_width="145dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="64dp"
-                                    android:text="Beli Sekarang"
-                                    android:background="@drawable/rounded_green_button"
-                                    android:fontFamily="@font/poppins"
-                                    android:textAllCaps="false"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/white"
-                                    >
-                                </androidx.appcompat.widget.AppCompatButton>
-                            </LinearLayout>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/items"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:padding="12dp"
-                            android:orientation="vertical">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:layout_gravity="center"
-                                android:orientation="horizontal">
-
-                                <ImageButton
-                                    android:layout_width="32dp"
-                                    android:layout_height="32dp">
-                                </ImageButton>
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="Nasi Padang"
-                                    android:textSize="16dp"
-                                    android:textAllCaps="true"
-                                    android:layout_marginStart="12dp">
-                                </TextView>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/poppins"
-                                    android:text="12 Porsi"
-                                    android:textColor="@color/black_erie"
-                                    android:textStyle="bold"></TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="-">
-                                </TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="Gratis Minum">
-                                </TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textSize="16dp"
-                                    android:textColor="@color/black_erie"
-                                    android:text="-">
-                                </TextView>
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/black_erie"
-                                    android:text="Ambil di tempat">
-                                </TextView>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_marginTop="16dp"
-                                android:layout_height="wrap_content">
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="Rp.11.000"
-                                    android:textSize="28dp"
-                                    android:textColor="@color/green_dark"
-                                    android:fontFamily="@font/poppins"
-                                    android:textStyle="bold">
-                                </TextView>
-
-                                <androidx.appcompat.widget.AppCompatButton
-                                    android:layout_width="145dp"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginStart="64dp"
-                                    android:text="Beli Sekarang"
-                                    android:background="@drawable/rounded_green_button"
-                                    android:fontFamily="@font/poppins"
-                                    android:textAllCaps="false"
-                                    android:textStyle="bold"
-                                    android:textColor="@color/white"
-                                    >
-                                </androidx.appcompat.widget.AppCompatButton>
-                            </LinearLayout>
-
-                        </LinearLayout>
                     </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
@@ -596,3 +360,4 @@
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+    </layout>
