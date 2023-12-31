@@ -1,11 +1,10 @@
-package com.delishstudio.delish.activities.auth
+package com.delishstudio.delish.view.activities.auth
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import com.delishstudio.delish.R
-import com.delishstudio.delish.activities.HomeActivity
 
 class SignInActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

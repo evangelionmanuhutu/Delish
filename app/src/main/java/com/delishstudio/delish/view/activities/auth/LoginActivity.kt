@@ -1,32 +1,31 @@
-package com.delishstudio.delish.activities.auth
+package com.delishstudio.delish.view.activities.auth
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import com.delishstudio.delish.MainActivity
 import com.delishstudio.delish.R
-import com.delishstudio.delish.activities.HomeActivity
+import com.delishstudio.delish.databinding.ActivityLoginBinding
+import com.delishstudio.delish.view.activities.HomeActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.tasks.Task
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityLoginBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        supportActionBar?.hide()
+        setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
 
@@ -37,9 +36,10 @@ class LoginActivity : AppCompatActivity() {
 
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        findViewById<Button>(R.id.btn_login_google).setOnClickListener {
+        binding.btnLoginGoogle.setOnClickListener {
             googleSignIn();
         }
+        super.onCreate(savedInstanceState)
     }
 
     private fun googleSignIn() {
