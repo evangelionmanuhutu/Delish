@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityLoginBinding
 import com.delishstudio.delish.view.activities.HomeActivity
@@ -24,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var googleSignInClient: GoogleSignInClient
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityLoginBinding.inflate(layoutInflater)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.main_col)
         supportActionBar?.hide()
         setContentView(binding.root)
 
@@ -37,7 +39,7 @@ class LoginActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         binding.btnLoginGoogle.setOnClickListener {
-            googleSignIn();
+            googleSignIn()
         }
         super.onCreate(savedInstanceState)
     }
@@ -51,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
 
         if (result.resultCode == Activity.RESULT_OK) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(result.data)
-            manageResults(task);
+            manageResults(task)
         }
     }
 
