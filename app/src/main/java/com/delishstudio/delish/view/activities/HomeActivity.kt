@@ -4,22 +4,20 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityHomeBinding
 import com.delishstudio.delish.model.Food
 
 class HomeActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityHomeBinding
     private var foodList: ArrayList<Food> = ArrayList()
 
-    private var _binding: ActivityHomeBinding? = null
-    private val binding get() = _binding!!
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
+        window.statusBarColor = ContextCompat.getColor(this, R.color.main_col)
         supportActionBar?.hide()
-
-        _binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         foodList.add(Food("Nasi Padang", "Gratis Ongkir | Halal", "Rp.10.000"))
@@ -39,5 +37,6 @@ class HomeActivity : AppCompatActivity() {
 
             binding.parentLayout.addView(inflater, binding.parentLayout.childCount)
         }
+        super.onCreate(savedInstanceState)
     }
 }

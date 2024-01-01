@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_background"
-    tools:context=".activities.SignActivity"
+    tools:context=".view.activities.auth.BoardingAuthActivity"
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="63dp">
 
@@ -14,15 +15,15 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/inria_serif_bold"
-        android:text="Delish."
+        android:text="@string/app_name"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="60dp"
+        android:textSize="60sp"
         app:fontFamily="@font/inria_serif_bold"
         app:layout_constraintBottom_toTopOf="@+id/appCompatTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/appCompatTextView"
@@ -32,31 +33,31 @@
         android:text="@string/motto"
         android:textAlignment="center"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:fontFamily="@font/inria_serif_bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.221" />
+        app:layout_constraintVertical_bias="0.221"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btSignUp"
+        android:id="@+id/btRegister"
         android:layout_width="270dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_green_button"
         android:fontFamily="@font/poppins"
-        android:text="Sign Up"
+        android:text="@string/txt_register"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/btLogin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintVertical_bias="0.95"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btLogin"
@@ -65,14 +66,14 @@
         android:layout_marginBottom="88dp"
         android:background="@drawable/rounded_green_button"
         android:fontFamily="@font/poppins"
-        android:text="Login"
+        android:text="@string/txt_login"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
         android:id="@+id/iv2"
@@ -84,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.114"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.578"/>
 
     <ImageView
         android:id="@+id/iv1"
@@ -96,5 +97,5 @@
         app:layout_constraintHorizontal_bias="0.824"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.415" />
+        app:layout_constraintVertical_bias="0.415"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
