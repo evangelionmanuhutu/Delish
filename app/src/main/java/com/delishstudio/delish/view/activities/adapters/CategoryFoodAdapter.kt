@@ -14,7 +14,7 @@ import java.util.Locale
 
 class CategoryFoodAdapter(private val foodList: List<Food>, private val cat: FoodCategory) : RecyclerView.Adapter<CategoryFoodAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.category_food_card, parent, false))
+        return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_category_food_card, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {

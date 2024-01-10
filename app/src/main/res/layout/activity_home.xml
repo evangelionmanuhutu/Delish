@@ -434,7 +434,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 tools:itemCount="1"
-                                tools:listitem="@layout/food_list_card"></androidx.recyclerview.widget.RecyclerView>
+                                tools:listitem="@layout/layout_food_list_card"></androidx.recyclerview.widget.RecyclerView>
 
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>

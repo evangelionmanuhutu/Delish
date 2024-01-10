@@ -68,7 +68,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                tools:listitem="@layout/category_food_card">
+                tools:listitem="@layout/layout_category_food_card">
             </androidx.recyclerview.widget.RecyclerView>
 
 

@@ -2,6 +2,7 @@ package com.delishstudio.delish.view.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.window.OnBackInvokedDispatcher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -68,6 +69,11 @@ class HomeActivity : AppCompatActivity() {
 
         binding.bahanMakananBtn.setOnClickListener {
             val intent = Intent(this, CategoryBahanMakanan::class.java)
+            startActivity(intent)
+        }
+
+        binding.cartBtn.setOnClickListener {
+            val intent = Intent(this, CartActivity::class.java)
             startActivity(intent)
         }
     }
