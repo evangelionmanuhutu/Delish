@@ -2,9 +2,9 @@ package com.delishstudio.delish.model
 
 import androidx.appcompat.widget.AppCompatButton
 
-class Food(name: String, qua: Int, price: Double, cat: FoodCategory){
+class Food(name: String, qua: Int, price: Int, cat: FoodCategory){
     private var  m_Name: String = name
-    private var m_Price: Double = price
+    private var m_Price: Int = price
     private var m_Quantity: Int = qua
     private lateinit var m_ImageSrc : String
     private lateinit var m_BuyButton: AppCompatButton
@@ -25,7 +25,7 @@ class Food(name: String, qua: Int, price: Double, cat: FoodCategory){
         m_RatingNumber = rating
     }
 
-    fun setPrice(price: Double){
+    fun setPrice(price: Int){
         m_Price = price
     }
 
@@ -56,7 +56,7 @@ class Food(name: String, qua: Int, price: Double, cat: FoodCategory){
         return m_Name
     }
 
-    fun getPrice(): Double {
+    fun getPrice(): Int {
         return m_Price
     }
 

@@ -20,9 +20,9 @@ class CategoryFoodActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
-            Food("Nasi Padang", 12, 10.000, FoodCategory.MAKANAN_BERAT),
-            Food("Donat", 12, 5.000, FoodCategory.CAMILAN),
-            Food("Bir", 12, 40.000, FoodCategory.MINUMAN)
+            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
+            Food("Donat", 12, 5000, FoodCategory.CAMILAN),
+            Food("Bir", 12, 40000, FoodCategory.MINUMAN)
         )
 
         recyclerView.adapter = CategoryFoodAdapter(foodList)

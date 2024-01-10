@@ -27,11 +27,11 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foods = listOf(
-            Food("Nasi Padang", 12, 10000.0, FoodCategory.MAKANAN_BERAT),
-            Food("Donat", 12, 5000.0, FoodCategory.CAMILAN),
-            Food("Nasi Goreng", 12, 40000.0, FoodCategory.MAKANAN_BERAT),
-            Food("Bir", 12, 40000.0, FoodCategory.MINUMAN),
-            Food("Coca Cola", 12, 40000.0, FoodCategory.MINUMAN)
+            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
+            Food("Donat", 12, 5000, FoodCategory.CAMILAN),
+            Food("Nasi Goreng", 12, 40000, FoodCategory.MAKANAN_BERAT),
+            Food("Bir", 12, 40000, FoodCategory.MINUMAN),
+            Food("Coca Cola", 12, 40000, FoodCategory.MINUMAN)
         )
 
         recyclerView.adapter = FoodListAdapter(foods)
