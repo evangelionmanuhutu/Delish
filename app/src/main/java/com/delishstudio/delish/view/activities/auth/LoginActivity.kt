@@ -32,7 +32,6 @@ class LoginActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(binding.root)
 
-
         auth = FirebaseAuth.getInstance()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -44,7 +43,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
             emailLogin()
-
             viewModel.loginResult.observe(this) { isSuccessful ->
                 if (isSuccessful) {
                     val intent = Intent(this, HomeActivity::class.java)

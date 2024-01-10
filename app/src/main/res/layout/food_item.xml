@@ -1,106 +1,107 @@
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-    <data>
-        <variable
-            name="food"
-            type="com.delishstudio.delish.model.Food"/>
-    </data>
+    android:id="@+id/main_food_card"
+    android:layout_width="match_parent"
+    android:layout_height="130dp"
+    android:layout_marginTop="4dp"
+    android:background="@drawable/items"
+    android:elevation="10dp"
+    android:orientation="vertical"
+    android:padding="12dp">
 
-    <!-- Food Item List -->
-    <LinearLayout
-        android:id="@+id/verticalFoodListLayout"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_marginStart="16dp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/foodBuyButton"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
-        android:background="@drawable/items"
-        android:elevation="10dp"
-        android:orientation="vertical"
-        android:padding="12dp">
+        android:background="@drawable/rounded_green_button"
+        android:fontFamily="@font/poppins"
+        android:text="@string/txt_btn_beli_sekarang"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_conversion_absoluteHeight="40dp"
+        tools:layout_conversion_absoluteWidth="130dp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/foodPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Rp.12.000"
+        android:textColor="@color/main_col"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/foodBuyButton"
-                android:layout_width="130dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/rounded_green_button"
-                android:fontFamily="@font/poppins"
-                android:text="@string/txt_btn_beli_sekarang"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.866"
-                app:layout_constraintStart_toEndOf="@+id/foodPriceTextView"
-                app:layout_constraintTop_toBottomOf="@+id/foodCategoryTextView" />
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        tools:layout_conversion_absoluteHeight="34dp"
+        tools:layout_conversion_absoluteWidth="89dp" />
 
-            <TextView
-                android:id="@+id/foodPriceTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/poppins_semibold"
-                android:text='@{food.price, default="Rp.0.000"}'
-                android:textColor="@color/main_col"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/foodCategoryTextView" />
+    <TextView
+        android:id="@+id/main_food_quantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text="12 Porsi"
+        android:textColor="@color/black_erie"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageButton"
+        app:layout_constraintTop_toBottomOf="@+id/main_food_name"
+        tools:layout_conversion_absoluteHeight="22dp"
+        tools:layout_conversion_absoluteWidth="91dp" />
 
-            <TextView
-                android:id="@+id/foodCategoryTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="@font/montserrat"
-                android:text='@{food.category, default="Gratis Ongkir"}'
-                android:textColor="@color/black_erie"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.046"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/foodNameTextView"
-                app:layout_constraintVertical_bias="0.0" />
+    <TextView
+        android:id="@+id/foodCategoryTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/montserrat"
+        android:text='@{food.category, default="Gratis Ongkir"}'
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:background="@drawable/dots"
-                android:contentDescription="@string/txt_bg_food_item"
-                app:layout_constraintBottom_toBottomOf="@+id/foodNameTextView"
-                app:layout_constraintEnd_toStartOf="@+id/foodNameTextView"
-                app:layout_constraintHorizontal_bias="0.592"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/foodNameTextView"
-                app:layout_constraintVertical_bias="0.5" />
+        android:textColor="@color/black_erie"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/main_food_quantity"
+        app:layout_constraintTop_toBottomOf="@+id/main_food_name"
+        tools:layout_conversion_absoluteHeight="22dp"
+        tools:layout_conversion_absoluteWidth="91dp" />
 
-            <TextView
-                android:id="@+id/foodNameTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:text='@{food.name, default="makanan"}'
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@color/main_col"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.114"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/dots"
+        android:contentDescription="@string/txt_bg_food_item"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_conversion_absoluteHeight="20dp"
+        tools:layout_conversion_absoluteWidth="20dp" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/main_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/poppins"
+        android:text="Nama Makanan"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/main_col"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageButton"
+        app:layout_constraintStart_toEndOf="@+id/imageButton"
+        app:layout_constraintTop_toTopOf="@+id/imageButton"
+        tools:layout_conversion_absoluteHeight="27dp"
+        tools:layout_conversion_absoluteWidth="77dp" />
 
-    </LinearLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
