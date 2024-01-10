@@ -8,7 +8,7 @@
     android:elevation="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/image_frame"
+        android:id="@+id/cat_food_image_frame"
         android:layout_width="120dp"
         android:layout_height="match_parent"
         android:background="@color/green_dark"
@@ -84,7 +84,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="NAMA MAKANAN"
         android:textColor="@color/green_dark"
-        app:layout_constraintStart_toEndOf="@+id/image_frame"
+        app:layout_constraintStart_toEndOf="@+id/cat_food_image_frame"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView

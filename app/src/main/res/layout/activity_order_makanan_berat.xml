@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.OrderMakananBeratActivity">
+    tools:context=".view.activities.CategoryFoodActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -64,13 +64,12 @@
                 android:id="@+id/cat_food_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:listitem="@layout/category_food_card"
+                android:layout_margin="16dp"
                 android:layout_marginTop="16dp"
-                android:paddingBottom="32dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginEnd="24dp"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
-            </androidx.recyclerview.widget.RecyclerView>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                tools:listitem="@layout/category_food_card"></androidx.recyclerview.widget.RecyclerView>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

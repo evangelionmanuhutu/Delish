@@ -9,10 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.Food
 
-class CategoryFoodAdapter(
-    private val m_FoodList: List<Food>
-
-) : RecyclerView.Adapter<CategoryFoodAdapter.ViewHolder>(){
+class CategoryFoodAdapter(private val m_FoodList: List<Food>) : RecyclerView.Adapter<CategoryFoodAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryFoodAdapter.ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.category_food_card, parent, false))
     }
@@ -32,11 +29,9 @@ class CategoryFoodAdapter(
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        //val image = view.findViewById<ImageView>(R.id.cat_food_image_preview)
         val name = view.findViewById<TextView>(R.id.cat_food_nama_makanan)
         val quantity = view.findViewById<TextView>(R.id.cat_food_quantity)
-        val category = view.findViewById<TextView>(R.id.cat_food_quantity)
-        //val addButton = view.findViewById<androidx.appcompat.widget.AppCompatButton>(R.id.cat_food_add_button)
+        val category = view.findViewById<TextView>(R.id.cat_food_category)
         val price = view.findViewById<TextView>(R.id.cat_food_price)
         val address = view.findViewById<TextView>(R.id.cat_food_alamat)
         val distance = view.findViewById<TextView>(R.id.cat_food_distance)
