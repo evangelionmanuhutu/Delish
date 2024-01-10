@@ -8,17 +8,16 @@ import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.Food
 import com.delishstudio.delish.model.FoodCategory
-import com.delishstudio.delish.view.activities.adapters.CategoryMakananBeratAdapter
-import com.delishstudio.delish.view.activities.adapters.CategoryMinumanAdapter
+import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
 class CategoryMinumanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
-        setContentView(R.layout.activity_category_minuman)
+        setContentView(R.layout.activity_category_food)
 
-        val recyclerView = findViewById<RecyclerView>(R.id.cat_minuman_recyclerView)
+        val recyclerView = findViewById<RecyclerView>(R.id.cat_food_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
@@ -32,6 +31,6 @@ class CategoryMinumanActivity : AppCompatActivity() {
             Food("Coca Cola", 12, 10000, FoodCategory.MINUMAN),
         )
 
-        recyclerView.adapter = CategoryMinumanAdapter(foodList)
+        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.MINUMAN)
     }
 }

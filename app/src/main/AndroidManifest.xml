@@ -19,6 +19,21 @@
             android:name=".view.activities.CategoryMakananBeratActivity"
             android:exported="false" />
         <activity
+            android:name=".view.activities.CategoryMinumanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.CategoryCamilan"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.CategoryVegan"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.CategoryNonHalalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.activities.CategoryBahanMakanan"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.auth.BoardingAuthActivity"
             android:exported="false" />
         <activity

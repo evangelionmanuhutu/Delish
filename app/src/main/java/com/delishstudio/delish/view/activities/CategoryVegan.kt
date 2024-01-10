@@ -1,7 +1,7 @@
 package com.delishstudio.delish.view.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +10,7 @@ import com.delishstudio.delish.model.Food
 import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
-class CategoryMakananBeratActivity: AppCompatActivity() {
+class CategoryVegan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
@@ -21,16 +21,16 @@ class CategoryMakananBeratActivity: AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT)
+            Food("Sayur A", 12, 10000, FoodCategory.VEGAN),
+            Food("Sayur B", 12, 10000, FoodCategory.VEGAN),
+            Food("Sayur C", 12, 10000, FoodCategory.VEGAN),
+            Food("Sayur D", 12, 10000, FoodCategory.VEGAN),
+            Food("Sayur E", 12, 10000, FoodCategory.VEGAN),
+            Food("Sayur F", 12, 10000, FoodCategory.VEGAN),
+            Food("Sayur G", 12, 10000, FoodCategory.VEGAN),
+            Food("Sayur H", 12, 10000, FoodCategory.VEGAN)
         )
 
-        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.MAKANAN_BERAT)
+        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.VEGAN)
     }
 }

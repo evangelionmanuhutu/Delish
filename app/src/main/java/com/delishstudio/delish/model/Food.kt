@@ -35,17 +35,16 @@ class Food(name: String, qua: Int, price: Int, cat: FoodCategory){
 
     fun getCategoryString(): String {
         when(m_Category){
-            FoodCategory.MAKANAN_BERAT      -> return "Makanan Berat"
-            FoodCategory.MAKANAN_NON_HALAL  -> return "Makanan Non Halal"
-            FoodCategory.CAMILAN            -> return "Camilan"
-            FoodCategory.MINUMAN            -> return "Minuman"
-            FoodCategory.BAHAN_MAKANAN      -> return "Bahan Makanan"
-            FoodCategory.MAKANAN_VEGAN      -> return "Makanan Vegan"
+            FoodCategory.MAKANAN_BERAT -> return "Makanan Berat"
+            FoodCategory.NON_HALAL     -> return "Non Halal"
+            FoodCategory.CAMILAN       -> return "Camilan"
+            FoodCategory.MINUMAN       -> return "Minuman"
+            FoodCategory.BAHAN_MAKANAN -> return "Bahan Makanan"
+            FoodCategory.VEGAN         -> return "Vegan"
             else -> {
                 return "Invalid"
             }
         }
-        return "Invalid"
     }
 
     fun getCategory(): FoodCategory {

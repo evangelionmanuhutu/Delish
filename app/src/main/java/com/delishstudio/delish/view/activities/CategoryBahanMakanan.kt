@@ -1,7 +1,7 @@
 package com.delishstudio.delish.view.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -10,7 +10,7 @@ import com.delishstudio.delish.model.Food
 import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
-class CategoryMakananBeratActivity: AppCompatActivity() {
+class CategoryBahanMakanan : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
@@ -21,16 +21,16 @@ class CategoryMakananBeratActivity: AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT)
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
+            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN)
         )
 
-        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.MAKANAN_BERAT)
+        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.BAHAN_MAKANAN)
     }
 }

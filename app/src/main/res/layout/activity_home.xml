@@ -196,7 +196,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
-                                    android:id="@+id/home_makanan_berat_btn"
+                                    android:id="@+id/makanan_berat_btn"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:layout_marginStart="16dp"
@@ -227,7 +227,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
-                                    android:id="@+id/home_minuman_btn"
+                                    android:id="@+id/minuman_btn"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:layout_marginStart="16dp"
@@ -258,7 +258,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageButton
-                                    android:id="@+id/home_camilan_btn"
+                                    android:id="@+id/camilan_btn"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:layout_marginStart="16dp"
@@ -291,7 +291,7 @@
                                 app:layout_constraintTop_toBottomOf="@+id/makanan_berat_layout">
 
                                 <ImageButton
-                                    android:id="@+id/home_makana_vegan_btn"
+                                    android:id="@+id/makanan_vegan_btn"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:layout_marginStart="16dp"
@@ -324,7 +324,7 @@
                                 app:layout_constraintTop_toBottomOf="@+id/minuman_layout">
 
                                 <ImageButton
-                                    android:id="@+id/home_makanan_non_halal_btn"
+                                    android:id="@+id/makanan_non_halal_btn"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:layout_marginStart="16dp"
@@ -357,7 +357,7 @@
                                 app:layout_constraintTop_toBottomOf="@+id/camilan_layout">
 
                                 <ImageButton
-                                    android:id="@+id/home_bahan_makanan_btn"
+                                    android:id="@+id/bahan_makanan_btn"
                                     android:layout_width="80dp"
                                     android:layout_height="80dp"
                                     android:layout_marginStart="16dp"

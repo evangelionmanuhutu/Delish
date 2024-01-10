@@ -37,13 +37,37 @@ class HomeActivity : AppCompatActivity() {
 
         recyclerView.adapter = FoodListAdapter(foods)
 
-        binding.homeMakananBeratBtn.setOnClickListener {
+        setupButtons()
+    }
+
+    private fun setupButtons() {
+        binding.makananBeratBtn.setOnClickListener {
             val intent = Intent(this, CategoryMakananBeratActivity::class.java)
             startActivity(intent)
         }
 
-        binding.homeMinumanBtn.setOnClickListener {
+        binding.minumanBtn.setOnClickListener {
             val intent = Intent(this, CategoryMinumanActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.camilanBtn.setOnClickListener {
+            val intent = Intent(this, CategoryCamilan::class.java)
+            startActivity(intent)
+        }
+
+        binding.makananVeganBtn.setOnClickListener {
+            val intent = Intent(this, CategoryVegan::class.java)
+            startActivity(intent)
+        }
+
+        binding.makananNonHalalBtn.setOnClickListener {
+            val intent = Intent(this, CategoryNonHalalActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.bahanMakananBtn.setOnClickListener {
+            val intent = Intent(this, CategoryBahanMakanan::class.java)
             startActivity(intent)
         }
     }
