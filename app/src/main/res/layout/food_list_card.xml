@@ -9,10 +9,10 @@
     android:layout_marginTop="4dp"
     android:layout_marginStart="24dp"
     android:layout_marginEnd="24dp"
-    android:background="@drawable/items"
-    android:elevation="10dp"
-    android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="12dp"
+    android:elevation="5dp"
+    android:background="@drawable/background_white_round_corner"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/food_buy_btn"

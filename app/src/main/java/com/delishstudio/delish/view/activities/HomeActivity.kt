@@ -10,6 +10,7 @@ import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityHomeBinding
 import com.delishstudio.delish.model.Food
 import com.delishstudio.delish.model.FoodCategory
+import com.delishstudio.delish.view.activities.adapters.FoodListAdapter
 
 class HomeActivity : AppCompatActivity() {
 
@@ -37,7 +38,12 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.adapter = FoodListAdapter(foods)
 
         binding.homeMakananBeratBtn.setOnClickListener {
-            val intent = Intent(this, CategoryFoodActivity::class.java)
+            val intent = Intent(this, CategoryMakananBeratActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.homeMinumanBtn.setOnClickListener {
+            val intent = Intent(this, CategoryMinumanActivity::class.java)
             startActivity(intent)
         }
     }

@@ -1,4 +1,4 @@
-package com.delishstudio.delish.view.activities
+package com.delishstudio.delish.view.activities.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -11,11 +11,11 @@ import java.text.NumberFormat
 import java.util.Locale
 
 class FoodListAdapter(private val m_FoodList: List<Food>) : RecyclerView.Adapter<FoodListAdapter.ViewHolder>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodListAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.food_list_card, parent, false))
     }
 
-    override fun onBindViewHolder(holder: FoodListAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.name.text = m_FoodList[position].getName()
 
         val formatter = NumberFormat.getInstance(Locale.getDefault())

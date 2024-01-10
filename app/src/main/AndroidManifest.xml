@@ -16,10 +16,7 @@
         android:theme="@style/Theme.Delish"
         tools:targetApi="31">
         <activity
-            android:name=".view.activities.TestActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.activities.CategoryFoodActivity"
+            android:name=".view.activities.CategoryMakananBeratActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.auth.BoardingAuthActivity"

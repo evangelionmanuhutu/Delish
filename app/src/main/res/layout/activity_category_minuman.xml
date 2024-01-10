@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.CategoryFoodActivity">
+    tools:context=".view.activities.CategoryMinumanActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,8 +19,8 @@
                 android:id="@+id/constraintLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintTop_toBottomOf="@+id/makanan_berat_image">
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/minuman_image">
 
                 <Button
                     android:id="@+id/nearby_btn"
@@ -51,7 +51,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/makanan_berat_image"
+                android:id="@+id/minuman_image"
                 android:layout_width="match_parent"
                 android:layout_height="256dp"
                 android:scaleType="fitXY"
@@ -61,16 +61,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/cat_food_recyclerView"
+                android:id="@+id/cat_minuman_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
-                tools:listitem="@layout/category_food_card"></androidx.recyclerview.widget.RecyclerView>
+                tools:listitem="@layout/category_minuman_card">
 
+            </androidx.recyclerview.widget.RecyclerView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -189,7 +189,7 @@
                                 android:id="@+id/makanan_berat_layout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="32dp"
+                                android:layout_marginStart="24dp"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -206,12 +206,12 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_marginTop="12dp"
-                                    android:text="Makanan\n Berat"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="4dp"
+                                    android:text="Makanan Berat"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="8dp"
+                                    android:textSize="11sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
@@ -237,12 +237,12 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_marginTop="12dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="4dp"
                                     android:text="Minuman"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="8dp"
+                                    android:textSize="11sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
@@ -251,7 +251,7 @@
                                 android:id="@+id/camilan_layout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="32dp"
+                                android:layout_marginEnd="24dp"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -268,12 +268,12 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_marginTop="12dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="4dp"
                                     android:text="Camilan"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="8dp"
+                                    android:textSize="11sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
@@ -282,7 +282,8 @@
                                 android:id="@+id/makanan_vegan_layout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginStart="32dp"
+                                android:layout_marginStart="24dp"
+                                android:layout_marginTop="12dp"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -300,12 +301,12 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_marginTop="12dp"
-                                    android:text="Makanan\n Vegan"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="4dp"
+                                    android:text="Makanan Vegan"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="8dp"
+                                    android:textSize="11sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
@@ -314,6 +315,7 @@
                                 android:id="@+id/makanan_non_halal_layout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="16dp"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -332,12 +334,12 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_marginTop="12dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="4dp"
                                     android:text="Makanan\nNon Halal"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="8dp"
+                                    android:textSize="11sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
@@ -346,7 +348,8 @@
                                 android:id="@+id/bahan_makanan_layout"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginEnd="32dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_marginEnd="24dp"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -364,12 +367,12 @@
 
                                 <TextView
                                     android:layout_width="match_parent"
-                                    android:layout_height="20dp"
-                                    android:layout_marginTop="12dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="4dp"
                                     android:text="Bahan Makanan\n Segar"
                                     android:textAlignment="center"
                                     android:textColor="@color/black"
-                                    android:textSize="8dp"
+                                    android:textSize="11sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
 
