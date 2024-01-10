@@ -20,8 +20,7 @@ class CartActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.backBtn.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
     }
 }

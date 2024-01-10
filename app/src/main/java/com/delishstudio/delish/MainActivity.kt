@@ -13,4 +13,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this,  HomeActivity::class.java)
         startActivity(intent)
     }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        super.onDestroy()
+    }
 }

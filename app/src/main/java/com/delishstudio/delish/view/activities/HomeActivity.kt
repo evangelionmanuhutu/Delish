@@ -41,6 +41,10 @@ class HomeActivity : AppCompatActivity() {
         setupButtons()
     }
 
+    override fun onBackPressed() {
+        super.finishAffinity();
+    }
+
     private fun setupButtons() {
         binding.makananBeratBtn.setOnClickListener {
             val intent = Intent(this, CategoryMakananBeratActivity::class.java)
