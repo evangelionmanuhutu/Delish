@@ -28,7 +28,7 @@
             android:name=".view.activities.CategoryCamilan"
             android:exported="false" />
         <activity
-            android:name=".view.activities.CategoryVegan"
+            android:name=".view.activities.CategoryVeganActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.CategoryNonHalalActivity"

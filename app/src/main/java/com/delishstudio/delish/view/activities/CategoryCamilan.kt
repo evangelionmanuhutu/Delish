@@ -6,8 +6,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
-import com.delishstudio.delish.model.Food
-import com.delishstudio.delish.model.FoodCategory
+import com.delishstudio.delish.model.FoodModel
+import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
 class CategoryCamilan : AppCompatActivity() {
@@ -21,16 +21,16 @@ class CategoryCamilan : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN),
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN),
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN),
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN),
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN),
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN),
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN),
-            Food("Taro", 12, 10000, FoodCategory.CAMILAN)
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN),
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN),
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN),
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN),
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN),
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN),
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN),
+            FoodModel("Taro", 12, 10000, CategoryModel.CAMILAN)
         )
 
-        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.CAMILAN)
+        recyclerView.adapter = CategoryFoodAdapter(foodList, CategoryModel.CAMILAN)
     }
 }

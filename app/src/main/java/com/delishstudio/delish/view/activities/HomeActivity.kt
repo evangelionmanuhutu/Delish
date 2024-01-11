@@ -2,15 +2,14 @@ package com.delishstudio.delish.view.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.window.OnBackInvokedDispatcher
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityHomeBinding
-import com.delishstudio.delish.model.Food
-import com.delishstudio.delish.model.FoodCategory
+import com.delishstudio.delish.model.FoodModel
+import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.view.activities.adapters.FoodListAdapter
 
 class HomeActivity : AppCompatActivity() {
@@ -29,11 +28,11 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foods = listOf(
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Donat", 12, 5000, FoodCategory.CAMILAN),
-            Food("Nasi Goreng", 12, 40000, FoodCategory.MAKANAN_BERAT),
-            Food("Bir", 12, 40000, FoodCategory.MINUMAN),
-            Food("Coca Cola", 12, 40000, FoodCategory.MINUMAN)
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Donat", 12, 5000, CategoryModel.CAMILAN),
+            FoodModel("Nasi Goreng", 12, 40000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Bir", 12, 40000, CategoryModel.MINUMAN),
+            FoodModel("Coca Cola", 12, 40000, CategoryModel.MINUMAN)
         )
 
         recyclerView.adapter = FoodListAdapter(foods)
@@ -62,7 +61,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.makananVeganBtn.setOnClickListener {
-            val intent = Intent(this, CategoryVegan::class.java)
+            val intent = Intent(this, CategoryVeganActivity::class.java)
             startActivity(intent)
         }
 

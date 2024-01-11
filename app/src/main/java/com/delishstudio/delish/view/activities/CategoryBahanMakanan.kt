@@ -6,8 +6,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
-import com.delishstudio.delish.model.Food
-import com.delishstudio.delish.model.FoodCategory
+import com.delishstudio.delish.model.FoodModel
+import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
 class CategoryBahanMakanan : AppCompatActivity() {
@@ -21,16 +21,16 @@ class CategoryBahanMakanan : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN),
-            Food("Tepung Terigu", 12, 10000, FoodCategory.BAHAN_MAKANAN)
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN),
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN),
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN),
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN),
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN),
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN),
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN),
+            FoodModel("Tepung Terigu", 12, 10000, CategoryModel.BAHAN_MAKANAN)
         )
 
-        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.BAHAN_MAKANAN)
+        recyclerView.adapter = CategoryFoodAdapter(foodList, CategoryModel.BAHAN_MAKANAN)
     }
 }

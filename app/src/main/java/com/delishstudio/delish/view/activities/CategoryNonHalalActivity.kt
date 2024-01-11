@@ -6,8 +6,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
-import com.delishstudio.delish.model.Food
-import com.delishstudio.delish.model.FoodCategory
+import com.delishstudio.delish.model.FoodModel
+import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
 class CategoryNonHalalActivity:AppCompatActivity() {
@@ -21,16 +21,16 @@ class CategoryNonHalalActivity:AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL),
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL),
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL),
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL),
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL),
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL),
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL),
-            Food("Babi", 12, 10000, FoodCategory.NON_HALAL)
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL),
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL),
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL),
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL),
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL),
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL),
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL),
+            FoodModel("Babi", 12, 10000, CategoryModel.NON_HALAL)
         )
 
-        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.NON_HALAL)
+        recyclerView.adapter = CategoryFoodAdapter(foodList, CategoryModel.NON_HALAL)
     }
 }

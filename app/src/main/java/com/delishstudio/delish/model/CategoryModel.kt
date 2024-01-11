@@ -1,6 +1,6 @@
 package com.delishstudio.delish.model
 
-enum class FoodCategory {
+enum class CategoryModel {
     MAKANAN_BERAT,
     MINUMAN,
     VEGAN,

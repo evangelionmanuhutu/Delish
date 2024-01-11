@@ -2,7 +2,7 @@ package com.delishstudio.delish.model
 
 import androidx.appcompat.widget.AppCompatButton
 
-class Food(name: String, qua: Int, price: Int, cat: FoodCategory){
+class FoodModel(name: String, qua: Int, price: Int, cat: CategoryModel){
     private var  m_Name: String = name
     private var m_Price: Int = price
     private var m_Quantity: Int = qua
@@ -11,7 +11,7 @@ class Food(name: String, qua: Int, price: Int, cat: FoodCategory){
     private var m_Distance: Double = 0.0
     private lateinit var m_Address: String
     private var m_RatingNumber: Double = 0.0
-    private var m_Category: FoodCategory = cat
+    private var m_Category: CategoryModel = cat
 
     fun setAddress(address: String) {
         m_Address = address
@@ -35,19 +35,19 @@ class Food(name: String, qua: Int, price: Int, cat: FoodCategory){
 
     fun getCategoryString(): String {
         when(m_Category){
-            FoodCategory.MAKANAN_BERAT -> return "Makanan Berat"
-            FoodCategory.NON_HALAL     -> return "Non Halal"
-            FoodCategory.CAMILAN       -> return "Camilan"
-            FoodCategory.MINUMAN       -> return "Minuman"
-            FoodCategory.BAHAN_MAKANAN -> return "Bahan Makanan"
-            FoodCategory.VEGAN         -> return "Vegan"
+            CategoryModel.MAKANAN_BERAT -> return "Makanan Berat"
+            CategoryModel.NON_HALAL     -> return "Non Halal"
+            CategoryModel.CAMILAN       -> return "Camilan"
+            CategoryModel.MINUMAN       -> return "Minuman"
+            CategoryModel.BAHAN_MAKANAN -> return "Bahan Makanan"
+            CategoryModel.VEGAN         -> return "Vegan"
             else -> {
                 return "Invalid"
             }
         }
     }
 
-    fun getCategory(): FoodCategory {
+    fun getCategory(): CategoryModel {
         return m_Category
     }
 

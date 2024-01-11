@@ -6,11 +6,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
-import com.delishstudio.delish.model.Food
+import com.delishstudio.delish.model.FoodModel
 import java.text.NumberFormat
 import java.util.Locale
 
-class FoodListAdapter(private val m_FoodList: List<Food>) : RecyclerView.Adapter<FoodListAdapter.ViewHolder>(){
+class FoodListAdapter(private val m_FoodList: List<FoodModel>) : RecyclerView.Adapter<FoodListAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_food_list_card, parent, false))
     }

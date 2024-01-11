@@ -6,8 +6,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
-import com.delishstudio.delish.model.Food
-import com.delishstudio.delish.model.FoodCategory
+import com.delishstudio.delish.model.FoodModel
+import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
 class CategoryMakananBeratActivity: AppCompatActivity() {
@@ -21,16 +21,16 @@ class CategoryMakananBeratActivity: AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val foodList = listOf(
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
-            Food("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT)
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
+            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT)
         )
 
-        recyclerView.adapter = CategoryFoodAdapter(foodList, FoodCategory.MAKANAN_BERAT)
+        recyclerView.adapter = CategoryFoodAdapter(foodList, CategoryModel.MAKANAN_BERAT)
     }
 }
