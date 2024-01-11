@@ -3,12 +3,13 @@ package com.delishstudio.delish.view.activities
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
+import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,7 +18,8 @@ import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
 
-class CategoryMinumanActivity : AppCompatActivity() {
+class CategoryBahanMakananActivity : AppCompatActivity() {
+
     private var foodList: ArrayList<FoodModel> = ArrayList()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,4 +64,5 @@ class CategoryMinumanActivity : AppCompatActivity() {
             dialog.window?.setGravity(Gravity.BOTTOM)
         }
     }
+
 }

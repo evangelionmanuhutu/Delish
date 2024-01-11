@@ -25,7 +25,7 @@
             android:name=".view.activities.CategoryMinumanActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activities.CategoryCamilan"
+            android:name=".view.activities.CategoryCamilanActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.CategoryVeganActivity"
@@ -34,7 +34,7 @@
             android:name=".view.activities.CategoryNonHalalActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activities.CategoryBahanMakanan"
+            android:name=".view.activities.CategoryBahanMakananActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.auth.BoardingAuthActivity"

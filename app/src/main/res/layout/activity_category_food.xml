@@ -31,7 +31,7 @@
                     android:layout_width="165dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:background="@drawable/rounded_green_button"
+                    android:background="@drawable/bg_rounded_green_button"
                     android:elevation="10dp"
                     android:text="Nearby"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginEnd="24dp"
-                    android:background="@drawable/rounded_green_button"
+                    android:background="@drawable/bg_rounded_green_button"
                     android:elevation="10dp"
                     android:text="Recomendation"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -73,6 +73,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/constraintLayout3"
+                tools:itemCount="5"
                 tools:listitem="@layout/layout_category_food_card"></androidx.recyclerview.widget.RecyclerView>
 
 

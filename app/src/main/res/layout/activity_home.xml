@@ -12,8 +12,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="60dp"
+        android:elevation="5dp"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +29,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"></TextView>
 
@@ -51,8 +52,9 @@
             android:id="@+id/bell_btn"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
             android:layout_marginBottom="4dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
@@ -109,8 +111,7 @@
                     android:layout_marginBottom="16dp"
                     android:background="@drawable/search_bar"
 
-                    android:elevation="8dp"
-                    android:ems="10"
+                    android:elevation="5dp"
                     android:hint="Search"
                     android:inputType="text"
                     android:paddingStart="16dp"
@@ -438,7 +439,7 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
-                            tools:itemCount="1"
+                            tools:itemCount="10"
                             tools:listitem="@layout/layout_food_list_card"></androidx.recyclerview.widget.RecyclerView>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>

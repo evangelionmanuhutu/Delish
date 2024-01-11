@@ -8,4 +8,9 @@
         <item name="colorOnSecondary">@color/black_erie</item>
         <item name="android:statusBarColor">@color/white</item>
     </style>
+
+    <style name="BottomSheetAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
 </resources>

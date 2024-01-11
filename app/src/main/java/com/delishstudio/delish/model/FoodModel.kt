@@ -1,5 +1,6 @@
 package com.delishstudio.delish.model
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 
 class FoodModel(name: String, qua: Int, price: Int, cat: CategoryModel){
@@ -7,7 +8,6 @@ class FoodModel(name: String, qua: Int, price: Int, cat: CategoryModel){
     private var m_Price: Int = price
     private var m_Quantity: Int = qua
     private lateinit var m_ImageSrc : String
-    private lateinit var m_BuyButton: AppCompatButton
     private var m_Distance: Double = 0.0
     private lateinit var m_Address: String
     private var m_RatingNumber: Double = 0.0

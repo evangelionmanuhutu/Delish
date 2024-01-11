@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_bottom_sheet">
+
+    <EditText
+        android:id="@+id/editTextTextMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/background_white_round_corner"
+        android:fontFamily="@font/poppins_medium"
+        android:gravity="start|top"
+        android:hint="Tolong minta alat makan"
+        android:inputType="textMultiLine"
+        android:padding="6dp"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/bs_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Rp.10.000"
+        android:textColor="@color/green_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/image_example"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bs_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Nasi Padang"
+        android:textColor="@color/green_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bs_alamat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="RM Padang Mahkota"
+        android:textColor="@color/green_dark"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/bs_nama"
+        app:layout_constraintTop_toBottomOf="@+id/bs_nama" />
+
+    <Button
+        android:id="@+id/bs_increment_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/ic_plus_button"
+        app:layout_constraintBottom_toBottomOf="@+id/bs_decrement_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bs_decrement_btn" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="1"
+        android:textColor="@color/black_erie"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bs_decrement_btn"
+        app:layout_constraintEnd_toStartOf="@+id/bs_increment_btn"
+        app:layout_constraintStart_toEndOf="@+id/bs_decrement_btn"
+        app:layout_constraintTop_toTopOf="@+id/bs_decrement_btn"></TextView>
+
+    <Button
+        android:id="@+id/bs_decrement_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="52dp"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/ic_min_button"
+        app:layout_constraintBottom_toBottomOf="@+id/bs_price"
+        app:layout_constraintEnd_toStartOf="@+id/bs_increment_btn"
+        app:layout_constraintTop_toTopOf="@+id/bs_price" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text=" Catatan buat restoran"
+        android:textColor="@color/black_erie"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/bs_price" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bs_tambah_pesanan_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_rounded_green_button"
+        android:text="Tambah Pesanan"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -56,7 +56,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.camilanBtn.setOnClickListener {
-            val intent = Intent(this, CategoryCamilan::class.java)
+            val intent = Intent(this, CategoryCamilanActivity::class.java)
             startActivity(intent)
         }
 
@@ -71,7 +71,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.bahanMakananBtn.setOnClickListener {
-            val intent = Intent(this, CategoryBahanMakanan::class.java)
+            val intent = Intent(this, CategoryBahanMakananActivity::class.java)
             startActivity(intent)
         }
 
