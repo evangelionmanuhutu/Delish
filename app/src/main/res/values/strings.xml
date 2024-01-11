@@ -22,4 +22,6 @@
     <string name="tv_verifikasi_password">verifikasi password</string>
     <string name="hint_verifikasi_password">Verifikasi password</string>
     <string name="txt_login_with_google">Login with Google</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

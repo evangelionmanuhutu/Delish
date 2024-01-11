@@ -95,7 +95,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/nama"
                 app:layout_constraintTop_toBottomOf="@+id/alamat"
-                app:srcCompat="@drawable/ic_back" />
+                app:srcCompat="@drawable/ic_min_button" />
 
             <ImageButton
                 android:id="@+id/imageButton4"
@@ -105,7 +105,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/decrement_btn"
                 app:layout_constraintTop_toTopOf="@+id/decrement_btn"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ic_back"
+                app:srcCompat="@drawable/ic_plus_button"
                 tools:layout_editor_absoluteX="195dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

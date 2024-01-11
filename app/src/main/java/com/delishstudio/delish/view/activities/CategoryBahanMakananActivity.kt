@@ -17,6 +17,7 @@ class CategoryBahanMakananActivity : AppCompatActivity(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
         setContentView(R.layout.activity_category_food)

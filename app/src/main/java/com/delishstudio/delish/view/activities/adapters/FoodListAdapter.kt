@@ -10,7 +10,14 @@ import com.delishstudio.delish.model.FoodModel
 import java.text.NumberFormat
 import java.util.Locale
 
-class FoodListAdapter(private val foodList: List<FoodModel>) : RecyclerView.Adapter<FoodListAdapter.ViewHolder>(){
+class FoodListAdapter(val foodList: List<FoodModel>) : RecyclerView.Adapter<FoodListAdapter.ViewHolder>(){
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val name = view.findViewById<TextView>(R.id.food_name)
+        val quantity = view.findViewById<TextView>(R.id.food_quantity)
+        val category = view.findViewById<TextView>(R.id.food_category)
+        val price = view.findViewById<TextView>(R.id.food_price)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_food_list_card, parent, false))
     }
@@ -24,12 +31,5 @@ class FoodListAdapter(private val foodList: List<FoodModel>) : RecyclerView.Adap
 
     override fun getItemCount(): Int {
         return foodList.size
-    }
-
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val name = view.findViewById<TextView>(R.id.food_name)
-        val quantity = view.findViewById<TextView>(R.id.food_quantity)
-        val category = view.findViewById<TextView>(R.id.food_category)
-        val price = view.findViewById<TextView>(R.id.food_price)
     }
 }

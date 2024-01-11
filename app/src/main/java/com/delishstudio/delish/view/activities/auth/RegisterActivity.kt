@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityRegisterBinding
-import com.delishstudio.delish.view.activities.HomeActivity
+import com.delishstudio.delish.view.fragments.HomeFragment
 import com.delishstudio.delish.viewmodel.auth.RegisterViewModel
 
 class RegisterActivity : AppCompatActivity() {
@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity() {
         }
         viewModel.registrationResult.observe(this) { isSuccessful ->
             if (isSuccessful) {
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, HomeFragment::class.java)
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Registrasi akun gagal!", Toast.LENGTH_SHORT).show()

@@ -8,9 +8,10 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityLoginBinding
-import com.delishstudio.delish.view.activities.HomeActivity
+import com.delishstudio.delish.view.fragments.HomeFragment
 import com.delishstudio.delish.viewmodel.auth.LoginViewModel
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -45,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
             emailLogin()
             viewModel.loginResult.observe(this) { isSuccessful ->
                 if (isSuccessful) {
-                    val intent = Intent(this, HomeActivity::class.java)
+                    val intent = Intent(this, HomeFragment::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this, "Anda gagal login, silahkan coba lagi!", Toast.LENGTH_SHORT).show()
@@ -110,7 +111,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun redirectToMainActivity() {
-        val intent = Intent(this, HomeActivity::class.java)
+        val intent = Intent(this, Fragment::class.java)
         startActivity(intent)
         finish()
     }

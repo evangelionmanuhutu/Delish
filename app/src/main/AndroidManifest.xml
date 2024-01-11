@@ -13,8 +13,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:enableOnBackInvokedCallback="true"
         android:theme="@style/Theme.Delish"
         tools:targetApi="31">
+        <activity
+            android:name=".view.activities.EditProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".view.activities.CartActivity"
             android:exported="false" />
@@ -52,7 +56,6 @@
             android:name=".view.activities.auth.LoginActivity"
             android:exported="false" />
         <activity android:name=".view.activities.auth.RegisterActivity" />
-        <activity android:name=".view.activities.HomeActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

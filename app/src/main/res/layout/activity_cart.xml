@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".view.activities.CartActivity">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:itemCount="1"
+        tools:listitem="@layout/layout_cart_item" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -16,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/back_btn"
+            android:id="@+id/cart_back_button"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginStart="16dp"
@@ -40,20 +47,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:itemCount="30"
-            tools:listitem="@layout/layout_cart_item" />
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

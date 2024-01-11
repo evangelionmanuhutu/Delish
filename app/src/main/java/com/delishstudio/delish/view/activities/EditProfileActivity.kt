@@ -1,26 +1,23 @@
 package com.delishstudio.delish.view.activities
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.core.content.ContextCompat
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityCartBinding
+import com.delishstudio.delish.databinding.ActivityEditProfileBinding
 
-@Suppress("DEPRECATION")
-class CartActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityCartBinding
+class EditProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityEditProfileBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCartBinding.inflate(layoutInflater)
+        binding = ActivityEditProfileBinding.inflate(layoutInflater)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        binding.cartBackButton.setOnClickListener {
+        binding.editProfileBackButton.setOnClickListener {
             onBackPressed()
         }
     }
