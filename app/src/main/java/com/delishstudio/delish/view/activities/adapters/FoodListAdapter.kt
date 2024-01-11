@@ -10,24 +10,20 @@ import com.delishstudio.delish.model.FoodModel
 import java.text.NumberFormat
 import java.util.Locale
 
-class FoodListAdapter(private val m_FoodList: List<FoodModel>) : RecyclerView.Adapter<FoodListAdapter.ViewHolder>(){
+class FoodListAdapter(private val foodList: List<FoodModel>) : RecyclerView.Adapter<FoodListAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_food_list_card, parent, false))
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.name.text = m_FoodList[position].getName()
-
-        val formatter = NumberFormat.getInstance(Locale.getDefault())
-        val formattedCurrency = formatter.format(m_FoodList[position].getPrice())
-        holder.price.text = "Rp.$formattedCurrency"
-
-        holder.quantity.text = m_FoodList[position].getQuantity().toString()
-        holder.category.text = m_FoodList[position].getCategoryString()
+        holder.name.text = foodList[position].name
+        holder.price.text = foodList[position].getFormatedPriceString()
+        holder.quantity.text = foodList[position].availableQua.toString()
+        holder.category.text = foodList[position].getCategoryString()
     }
 
     override fun getItemCount(): Int {
-        return m_FoodList.size
+        return foodList.size
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {

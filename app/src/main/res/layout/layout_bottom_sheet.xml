@@ -77,7 +77,7 @@
         app:layout_constraintTop_toTopOf="@+id/bs_decrement_btn" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/bs_counter"
         android:layout_width="8dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
