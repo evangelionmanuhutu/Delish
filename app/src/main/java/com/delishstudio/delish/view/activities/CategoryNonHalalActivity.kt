@@ -27,7 +27,7 @@ class CategoryNonHalalActivity:AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         foodList.add(FoodModel("Tepung Terigu", 12, 10000, cat))
-        val adapter = CategoryFoodAdapter(this, foodList, cat)
+        val adapter = CategoryFoodAdapter(foodList, cat)
         recyclerView.adapter = adapter
     }
 }

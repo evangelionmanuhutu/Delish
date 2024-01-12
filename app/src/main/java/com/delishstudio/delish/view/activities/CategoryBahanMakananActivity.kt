@@ -37,7 +37,7 @@ class CategoryBahanMakananActivity : AppCompatActivity(){
         foodList.add(FoodModel("Tepung G", 12, 10000, cat))
         foodList.add(FoodModel("Tepung H", 12, 10000, cat))
 
-        adapter = CategoryFoodAdapter(this, foodList, CategoryModel.BAHAN_MAKANAN)
+        adapter = CategoryFoodAdapter(foodList, CategoryModel.BAHAN_MAKANAN)
 
         recyclerView.adapter = adapter
     }

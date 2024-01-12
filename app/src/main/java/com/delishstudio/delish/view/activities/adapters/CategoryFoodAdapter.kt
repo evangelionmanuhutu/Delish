@@ -2,6 +2,7 @@ package com.delishstudio.delish.view.activities.adapters
 
 import android.app.Dialog
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.util.Log
@@ -13,13 +14,15 @@ import android.view.Window
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.model.OrderedFood
+import com.delishstudio.delish.view.activities.CheckoutActivity
 
-class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : RecyclerView.Adapter<CategoryFoodAdapter.FoodHolder>() {
+class CategoryFoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : RecyclerView.Adapter<CategoryFoodAdapter.FoodHolder>() {
 
     inner class FoodHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView
@@ -43,13 +46,14 @@ class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodMode
             bg = itemView.findViewById(R.id.cat_food_image_frame)
             ratingNumber = itemView.findViewById(R.id.cat_food_rating_number)
 
+
             addButton.setOnClickListener {
-                addButtonOnClickListener()
+                addButtonOnClickListener(itemView.context)
             }
         }
 
-        private fun addButtonOnClickListener() {
-            val dialog = Dialog(context)
+        private fun addButtonOnClickListener(c: Context) {
+            val dialog = Dialog(c)
 
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog.setContentView(R.layout.layout_bottom_sheet)
@@ -90,6 +94,8 @@ class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodMode
             // Tambah ke keranjang
             orderBtn.setOnClickListener{
                 OrderedFood.foodArray.add(currentFood)
+                val intent = Intent(c, CheckoutActivity::class.java)
+                //startActivity(intent)
             }
 
             dialog.show()
