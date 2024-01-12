@@ -1,7 +1,6 @@
 package com.delishstudio.delish.view.activities.adapters
 
 import android.app.Dialog
-import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -10,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
+import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -60,26 +60,26 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryM
             }
 
             addButton.setOnClickListener {
-                addButtonOnClickListener(itemView.context)
+                addButtonOnClickListener()
             }
         }
 
-        private fun addButtonOnClickListener(c: Context) {
+        private fun addButtonOnClickListener() {
 
             // Dialog only shown once
             if (isDialogShown) {
                 return
             }
 
-            val dialog = Dialog(c)
+            val dialog = Dialog(itemView.context)
 
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog.setContentView(R.layout.layout_sheet_add_food)
+            dialog.setContentView(R.layout.layout_add_food)
 
             val nama = dialog.findViewById<TextView>(R.id.bs_nama)
             val price = dialog.findViewById<TextView>(R.id.bs_price)
             var counter = dialog.findViewById<TextView>(R.id.bs_counter)
-
+            val orderMsg = dialog.findViewById<EditText>(R.id.bs_order_msg)
             val increment = dialog.findViewById<AppCompatButton>(R.id.bs_increment_btn)
             val decrement = dialog.findViewById<AppCompatButton>(R.id.bs_decrement_btn)
             val orderBtn = dialog.findViewById<AppCompatButton>(R.id.bs_tambah_pesanan_btn)
@@ -92,6 +92,7 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryM
             nama.text = currentFood.name
             price.text = currentFood.getFormatedPriceString()
             counter.text = currentFood.buyQuantity.toString()
+            currentFood.orderMsgToRestaurant = orderMsg.toString()
 
             increment.setOnClickListener {
                 currentFood.buyQuantity++
@@ -116,8 +117,8 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryM
             // Tambah ke keranjang
             orderBtn.setOnClickListener{
                 OrderedFood.foodArray.add(currentFood)
-                val intent = Intent(c, CheckoutActivity::class.java)
-                c.startActivity(intent)
+                val intent = Intent(itemView.context, CheckoutActivity::class.java)
+                itemView.context.startActivity(intent)
             }
 
             dialog.show()

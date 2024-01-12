@@ -27,7 +27,18 @@ class CategoryMakananBeratActivity: AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.cat_food_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        foodList.add(FoodModel("Tepung Terigu", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang A", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang B", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang C", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang D", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang E", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang F", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang G", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang H", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang I", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang K", 12, 10000, cat))
+        foodList.add(FoodModel("Nasi Padang L", 12, 10000, cat))
+
         val adapter = FoodAdapter(foodList, cat)
         recyclerView.adapter = adapter
     }

@@ -26,7 +26,18 @@ class CategoryNonHalalActivity:AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.cat_food_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        foodList.add(FoodModel("Tepung Terigu", 12, 10000, cat))
+        foodList.add(FoodModel("Babi A", 12, 12000, cat))
+        foodList.add(FoodModel("Babi B", 12, 12000, cat))
+        foodList.add(FoodModel("Babi C", 12, 12000, cat))
+        foodList.add(FoodModel("Babi D", 12, 12000, cat))
+        foodList.add(FoodModel("Babi E", 12, 12000, cat))
+        foodList.add(FoodModel("Babi F", 12, 12000, cat))
+        foodList.add(FoodModel("Babi G", 12, 12000, cat))
+        foodList.add(FoodModel("Babi H", 12, 12000, cat))
+        foodList.add(FoodModel("Babi I", 12, 12000, cat))
+        foodList.add(FoodModel("Babi K", 12, 12000, cat))
+        foodList.add(FoodModel("Babi L", 12, 12000, cat))
+
         val adapter = FoodAdapter(foodList, cat)
         recyclerView.adapter = adapter
     }

@@ -7,7 +7,7 @@
     android:background="@drawable/background_bottom_sheet">
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/bs_order_msg"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@drawable/background_white_round_corner"
@@ -120,8 +120,8 @@
         android:text="Tambah Pesanan"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
+        app:layout_constraintEnd_toEndOf="@+id/bs_order_msg"
+        app:layout_constraintStart_toStartOf="@+id/bs_order_msg"
+        app:layout_constraintTop_toBottomOf="@+id/bs_order_msg" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

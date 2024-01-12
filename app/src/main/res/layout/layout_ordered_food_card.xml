@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="16dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp">
+
+    <TextView
+        android:id="@+id/ordered_food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Rp.10.000"
+        android:textColor="@color/green_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/ordered_food_address"
+        app:layout_constraintTop_toBottomOf="@+id/ordered_food_address" />
+
+    <Button
+        android:id="@+id/ordered_decrement_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="52dp"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/ic_min_button"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toStartOf="@+id/ordered_increment_btn"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/ordered_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="1"
+        android:textColor="@color/black_erie"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/ordered_decrement_btn"
+        app:layout_constraintEnd_toStartOf="@+id/ordered_increment_btn"
+        app:layout_constraintStart_toEndOf="@+id/ordered_decrement_btn"
+        app:layout_constraintTop_toTopOf="@+id/ordered_decrement_btn"></TextView>
+
+    <Button
+        android:id="@+id/ordered_increment_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="@android:color/transparent"
+        android:foreground="@drawable/ic_plus_button"
+        app:layout_constraintBottom_toBottomOf="@+id/ordered_decrement_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ordered_decrement_btn" />
+
+    <TextView
+        android:id="@+id/ordered_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Nasi Padang"
+        android:textColor="@color/green_dark"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ordered_food_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="RM Padang Mahkota"
+        android:textColor="@color/green_dark"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/ordered_food_name"
+        app:layout_constraintTop_toBottomOf="@+id/ordered_food_name" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/image_example"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,11 +9,12 @@ class FoodModel(name: String, availableQua: Int, price: Int, cat: CategoryModel,
     var availableQua: Int = availableQua
     lateinit var imgSrc : String
     var distance: Int = 10
-    lateinit var address: String
+    var address: String = "Rumah Makan"
     var rating: Double = 0.0
     var category: CategoryModel = cat
     var quaUnit: String = unit
     var buyQuantity: Int = 0
+    lateinit var orderMsgToRestaurant: String
 
     fun getCategoryString(): String {
         when(category){
@@ -33,6 +34,6 @@ class FoodModel(name: String, availableQua: Int, price: Int, cat: CategoryModel,
     fun getFormatedPriceString(): String {
         val formatter = NumberFormat.getInstance(Locale.getDefault())
         val formattedCurrency = formatter.format(price)
-        return "Rp.$formattedCurrency"
+        return "Rp$formattedCurrency"
     }
 }

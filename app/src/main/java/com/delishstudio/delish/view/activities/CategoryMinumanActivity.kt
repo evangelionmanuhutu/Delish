@@ -26,7 +26,17 @@ class CategoryMinumanActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.cat_food_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        foodList.add(FoodModel("Tepung Terigu", 12, 10000, cat))
+        foodList.add(FoodModel("Minuman A", 1, 12000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman B", 1, 12000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman C", 1, 12000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman D", 13, 121000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman E", 4, 145000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman F", 21, 112000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman G", 63, 52000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman H", 31, 23000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman I", 32, 17000, cat, "Botol"))
+        foodList.add(FoodModel("Minuman J", 86, 13000, cat, "Botol"))
+
         val adapter = FoodAdapter(foodList, cat)
         recyclerView.adapter = adapter
     }

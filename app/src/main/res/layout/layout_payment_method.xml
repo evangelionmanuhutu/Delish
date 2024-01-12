@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
-        android:text="Metode Pemabyaran"
+        android:text="Metode Pembyaran"
         android:textColor="@color/black_erie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:elevation="5dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +40,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/ic_qris" />
 
             <TextView
                 android:id="@+id/qristxt"
@@ -64,7 +63,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:elevation="5dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +82,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/ic_shopeepay" />
 
             <TextView
                 android:id="@+id/shopeepaytxt"
@@ -107,7 +105,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:elevation="5dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -127,7 +124,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/ic_bank_bni" />
 
             <TextView
                 android:id="@+id/bnitxt"
@@ -150,7 +147,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:elevation="5dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -170,7 +166,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/ic_bank_bca" />
 
             <TextView
                 android:id="@+id/bcatxt"
@@ -193,7 +189,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:elevation="5dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -213,7 +208,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/ic_bank_mandiri" />
 
             <TextView
                 android:id="@+id/mandiritxt"
@@ -236,7 +231,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:elevation="5dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -256,7 +250,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/ic_gosend" />
 
             <TextView
                 android:id="@+id/gopaytxt"
@@ -279,7 +273,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="8dp"
-        android:elevation="5dp"
         app:cardCornerRadius="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -299,7 +292,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/dots" />
+                app:srcCompat="@drawable/ic_linkaja" />
 
             <TextView
                 android:id="@+id/linkajatxt"
@@ -307,7 +300,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:fontFamily="@font/poppins_semibold"
-                android:text="Link Aja"
+                android:text="LinkAja"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/linkaja_icon"

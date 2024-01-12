@@ -26,7 +26,19 @@ class CategoryVeganActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.cat_food_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        foodList.add(FoodModel("Tepung Terigu", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur A", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur B", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur C", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur D", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur E", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur F", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur G", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur H", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur I", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur K", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur L", 12, 10000, cat))
+        foodList.add(FoodModel("Sayur M", 12, 10000, cat))
+
         val adapter = FoodAdapter(foodList, cat)
         recyclerView.adapter = adapter
     }

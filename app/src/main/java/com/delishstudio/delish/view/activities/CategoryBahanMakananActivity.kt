@@ -29,13 +29,13 @@ class CategoryBahanMakananActivity : AppCompatActivity(){
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         foodList.add(FoodModel("Tepung A", 12, 10000, cat, "KG"))
-        foodList.add(FoodModel("Tepung B", 12, 10000, cat))
-        foodList.add(FoodModel("Tepung C", 12, 10000, cat))
-        foodList.add(FoodModel("Tepung D", 12, 10000, cat))
-        foodList.add(FoodModel("Tepung E", 12, 10000, cat))
-        foodList.add(FoodModel("Tepung F", 12, 10000, cat))
-        foodList.add(FoodModel("Tepung G", 12, 10000, cat))
-        foodList.add(FoodModel("Tepung H", 12, 10000, cat))
+        foodList.add(FoodModel("Tepung B", 12, 10000, cat, "KG"))
+        foodList.add(FoodModel("Tepung C", 12, 10000, cat, "KG"))
+        foodList.add(FoodModel("Tepung D", 12, 10000, cat, "KG"))
+        foodList.add(FoodModel("Tepung E", 12, 10000, cat, "KG"))
+        foodList.add(FoodModel("Tepung F", 12, 10000, cat, "KG"))
+        foodList.add(FoodModel("Tepung G", 12, 10000, cat, "KG"))
+        foodList.add(FoodModel("Tepung H", 12, 10000, cat, "KG"))
 
         adapter = FoodAdapter(foodList, CategoryModel.BAHAN_MAKANAN)
 
