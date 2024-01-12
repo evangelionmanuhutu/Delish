@@ -23,6 +23,7 @@ class FoodModel(name: String, availableQua: Int, price: Int, cat: CategoryModel,
             CategoryModel.MINUMAN       -> return "Minuman"
             CategoryModel.BAHAN_MAKANAN -> return "Bahan Makanan"
             CategoryModel.VEGAN         -> return "Vegan"
+            CategoryModel.MYSTERY_BOX   -> return "Mystery Box"
             else -> {
                 return "Invalid"
             }

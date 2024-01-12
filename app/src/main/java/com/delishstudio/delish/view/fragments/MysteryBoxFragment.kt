@@ -30,11 +30,9 @@ class MysteryBoxFragment : Fragment() {
     ): View? {
         inflater.inflate(R.layout.fragment_mystery_box, container, false)
         binding = FragmentMysteryBoxBinding.inflate(inflater, container, false)
-
         view = binding.root
 
         setupAdapters()
-
         return view
     }
 
@@ -42,11 +40,11 @@ class MysteryBoxFragment : Fragment() {
         recyclerView = view.findViewById(R.id.mystery_box_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
-        foodList.add(FoodModel("Random Food", 12, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 12, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 12, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 12, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 12, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
 
         adapter = FoodAdapter(foodList, CategoryModel.MYSTERY_BOX)
         recyclerView.adapter = adapter

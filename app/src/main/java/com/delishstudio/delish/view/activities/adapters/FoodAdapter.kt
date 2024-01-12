@@ -20,8 +20,8 @@ import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.model.OrderedFood
 import com.delishstudio.delish.view.activities.CheckoutActivity
 
-class FoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
-
+class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryModel) : RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
+    final var m_Category = cat
     inner class FoodHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView
         var quantity: TextView
@@ -36,15 +36,28 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : 
         var isDialogShown = false
 
         init {
-            name = itemView.findViewById(R.id.cat_food_nama_makanan)
-            quantity = itemView.findViewById(R.id.cat_food_quantity)
-            category = itemView.findViewById(R.id.cat_food_category)
-            price = itemView.findViewById(R.id.cat_food_price)
-            addButton = itemView.findViewById(R.id.cat_food_add_button)
-            address = itemView.findViewById(R.id.cat_food_alamat)
-            distance = itemView.findViewById(R.id.cat_food_distance)
-            bg = itemView.findViewById(R.id.cat_food_image_frame)
-            ratingNumber = itemView.findViewById(R.id.cat_food_rating_number)
+            if (m_Category == CategoryModel.MYSTERY_BOX) {
+                name = itemView.findViewById(R.id.mystery_box_nama_makanan)
+                quantity = itemView.findViewById(R.id.mystery_box_quantity)
+                category = itemView.findViewById(R.id.mystery_box_category)
+                price = itemView.findViewById(R.id.mystery_box_price)
+                addButton = itemView.findViewById(R.id.mystery_box_add_button)
+                address = itemView.findViewById(R.id.mystery_box_alamat)
+                distance = itemView.findViewById(R.id.mystery_box_distance)
+                bg = itemView.findViewById(R.id.mystery_box_image_frame)
+                ratingNumber = itemView.findViewById(R.id.mystery_box_rating_number)
+            }
+            else {
+                name = itemView.findViewById(R.id.cat_food_nama_makanan)
+                quantity = itemView.findViewById(R.id.cat_food_quantity)
+                category = itemView.findViewById(R.id.cat_food_category)
+                price = itemView.findViewById(R.id.cat_food_price)
+                addButton = itemView.findViewById(R.id.cat_food_add_button)
+                address = itemView.findViewById(R.id.cat_food_alamat)
+                distance = itemView.findViewById(R.id.cat_food_distance)
+                bg = itemView.findViewById(R.id.cat_food_image_frame)
+                ratingNumber = itemView.findViewById(R.id.cat_food_rating_number)
+            }
 
             addButton.setOnClickListener {
                 addButtonOnClickListener(itemView.context)
@@ -122,7 +135,16 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodHolder {
-        return FoodHolder(LayoutInflater.from(parent.context).inflate(R.layout.layout_category_food_card, parent, false))
+        var layoutID = 0
+
+        if (m_Category == CategoryModel.MYSTERY_BOX) {
+            layoutID = R.layout.layout_mystery_box_card
+        }
+        else {
+            layoutID = R.layout.layout_category_food_card
+        }
+
+        return FoodHolder(LayoutInflater.from(parent.context).inflate(layoutID, parent, false))
     }
 
     override fun onBindViewHolder(holder: FoodHolder, position: Int) {
