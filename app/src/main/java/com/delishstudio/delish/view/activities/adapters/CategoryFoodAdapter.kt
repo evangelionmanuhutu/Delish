@@ -73,6 +73,7 @@ class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodMode
 
             increment.setOnClickListener {
                 currentFood.buyQuantity++
+                counter.text = currentFood.buyQuantity.toString()
             }
 
             decrement.setOnClickListener{
