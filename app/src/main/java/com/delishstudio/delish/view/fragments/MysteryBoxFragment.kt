@@ -12,12 +12,12 @@ import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.FragmentMysteryBoxBinding
 import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.model.FoodModel
-import com.delishstudio.delish.view.activities.adapters.MysteryBoxAdapter
+import com.delishstudio.delish.view.activities.adapters.FoodAdapter
 
 class MysteryBoxFragment : Fragment() {
     private lateinit var binding: FragmentMysteryBoxBinding
     private var foodList: ArrayList<FoodModel> = ArrayList()
-    private lateinit var adapter: MysteryBoxAdapter
+    private lateinit var adapter: FoodAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var view: ConstraintLayout
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,7 +48,7 @@ class MysteryBoxFragment : Fragment() {
         foodList.add(FoodModel("Random Food", 12, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
         foodList.add(FoodModel("Random Food", 12, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
 
-        adapter = MysteryBoxAdapter(foodList)
+        adapter = FoodAdapter(foodList, CategoryModel.MYSTERY_BOX)
         recyclerView.adapter = adapter
     }
 }

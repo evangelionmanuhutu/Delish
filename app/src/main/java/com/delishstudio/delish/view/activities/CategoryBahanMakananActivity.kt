@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.CategoryModel
-import com.delishstudio.delish.view.activities.adapters.CategoryFoodAdapter
+import com.delishstudio.delish.view.activities.adapters.FoodAdapter
 
 class CategoryBahanMakananActivity : AppCompatActivity(){
     private var foodList: ArrayList<FoodModel> = ArrayList()
-    private lateinit var adapter: CategoryFoodAdapter
+    private lateinit var adapter: FoodAdapter
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class CategoryBahanMakananActivity : AppCompatActivity(){
         foodList.add(FoodModel("Tepung G", 12, 10000, cat))
         foodList.add(FoodModel("Tepung H", 12, 10000, cat))
 
-        adapter = CategoryFoodAdapter(foodList, CategoryModel.BAHAN_MAKANAN)
+        adapter = FoodAdapter(foodList, CategoryModel.BAHAN_MAKANAN)
 
         recyclerView.adapter = adapter
     }

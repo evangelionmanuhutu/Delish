@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +13,6 @@ import android.view.Window
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
@@ -22,7 +20,7 @@ import com.delishstudio.delish.model.CategoryModel
 import com.delishstudio.delish.model.OrderedFood
 import com.delishstudio.delish.view.activities.CheckoutActivity
 
-class CategoryFoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : RecyclerView.Adapter<CategoryFoodAdapter.FoodHolder>() {
+class FoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
 
     inner class FoodHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView
@@ -35,6 +33,8 @@ class CategoryFoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryM
         var bg: ConstraintLayout
         var ratingNumber: TextView
 
+        var isDialogShown = false
+
         init {
             name = itemView.findViewById(R.id.cat_food_nama_makanan)
             quantity = itemView.findViewById(R.id.cat_food_quantity)
@@ -46,13 +46,18 @@ class CategoryFoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryM
             bg = itemView.findViewById(R.id.cat_food_image_frame)
             ratingNumber = itemView.findViewById(R.id.cat_food_rating_number)
 
-
             addButton.setOnClickListener {
                 addButtonOnClickListener(itemView.context)
             }
         }
 
         private fun addButtonOnClickListener(c: Context) {
+
+            // Dialog only shown once
+            if (isDialogShown) {
+                return
+            }
+
             val dialog = Dialog(c)
 
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -91,6 +96,10 @@ class CategoryFoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryM
                 }
             }
 
+            dialog.setOnDismissListener {
+                isDialogShown = false
+            }
+
             // Tambah ke keranjang
             orderBtn.setOnClickListener{
                 OrderedFood.foodArray.add(currentFood)
@@ -107,6 +116,8 @@ class CategoryFoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryM
             dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
             dialog.window?.attributes?.windowAnimations = R.style.BottomSheetAnimation
             dialog.window?.setGravity(Gravity.BOTTOM)
+
+            isDialogShown = true
         }
     }
 
