@@ -6,5 +6,6 @@ enum class CategoryModel {
     VEGAN,
     NON_HALAL,
     CAMILAN,
-    BAHAN_MAKANAN
+    BAHAN_MAKANAN,
+    MYSTERY_BOX
 }

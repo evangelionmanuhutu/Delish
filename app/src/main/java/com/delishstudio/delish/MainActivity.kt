@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.delishstudio.delish.view.fragments.ProfileFragment
 import com.delishstudio.delish.view.fragments.HomeFragment
+import com.delishstudio.delish.view.fragments.MysteryBoxFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_mystery_box -> {
-                    Toast.makeText(this, "Mystery box clicked", Toast.LENGTH_SHORT).show()
+                    replaceFragment(MysteryBoxFragment())
                     true
                 }
                 R.id.navigation_transactions -> {

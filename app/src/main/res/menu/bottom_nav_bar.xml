@@ -6,7 +6,7 @@
     <item
         android:id="@+id/navigation_mystery_box"
         android:icon="@drawable/ic_mystery_box"
-        android:title="Mistery Box"/>
+        android:title="Mystery Box"/>
     <item
         android:id="@+id/navigation_transactions"
         android:icon="@drawable/ic_transaction"

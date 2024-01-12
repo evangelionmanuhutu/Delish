@@ -8,7 +8,7 @@ class FoodModel(name: String, availableQua: Int, price: Int, cat: CategoryModel,
     var price: Int = price
     var availableQua: Int = availableQua
     lateinit var imgSrc : String
-    var distance: Double = 0.0
+    var distance: Int = 10
     lateinit var address: String
     var rating: Double = 0.0
     var category: CategoryModel = cat

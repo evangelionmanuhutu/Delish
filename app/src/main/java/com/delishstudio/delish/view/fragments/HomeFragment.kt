@@ -31,8 +31,8 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         val view = binding.root
-        val recyclerView: RecyclerView = view.findViewById(R.id.food_list_recyclerView)
 
+        val recyclerView: RecyclerView = view.findViewById(R.id.food_list_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
         val foods = listOf(

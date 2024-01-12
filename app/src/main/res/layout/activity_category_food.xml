@@ -57,7 +57,7 @@
             <ImageView
                 android:id="@+id/makanan_berat_image"
                 android:layout_width="match_parent"
-                android:layout_height="256dp"
+                android:layout_height="230dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/image_example"
                 app:layout_constraintEnd_toEndOf="parent"

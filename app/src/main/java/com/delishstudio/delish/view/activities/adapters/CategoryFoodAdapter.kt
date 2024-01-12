@@ -4,20 +4,20 @@ import android.app.Dialog
 import android.content.Context
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
-import androidx.compose.ui.window.Popup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.CategoryModel
+import com.delishstudio.delish.model.OrderedFood
 
 class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodModel>, val cat: CategoryModel) : RecyclerView.Adapter<CategoryFoodAdapter.FoodHolder>() {
 
@@ -50,6 +50,7 @@ class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodMode
 
         private fun addButtonOnClickListener() {
             val dialog = Dialog(context)
+
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog.setContentView(R.layout.layout_bottom_sheet)
 
@@ -57,8 +58,38 @@ class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodMode
             val price = dialog.findViewById<TextView>(R.id.bs_price)
             var counter = dialog.findViewById<TextView>(R.id.bs_counter)
 
-            nama.text = foodList[bindingAdapterPosition].name
-            price.text = foodList[bindingAdapterPosition].getFormatedPriceString()
+            val increment = dialog.findViewById<AppCompatButton>(R.id.bs_increment_btn)
+            val decrement = dialog.findViewById<AppCompatButton>(R.id.bs_decrement_btn)
+            val orderBtn = dialog.findViewById<AppCompatButton>(R.id.bs_tambah_pesanan_btn)
+
+            val currentFood = foodList[bindingAdapterPosition]
+
+            if (currentFood.buyQuantity == 0)
+                currentFood.buyQuantity++
+
+            nama.text = currentFood.name
+            price.text = currentFood.getFormatedPriceString()
+            counter.text = currentFood.buyQuantity.toString()
+
+            increment.setOnClickListener {
+                currentFood.buyQuantity++
+            }
+
+            decrement.setOnClickListener{
+                if(currentFood.buyQuantity > 0){
+                    currentFood.buyQuantity--
+                    counter.text = currentFood.buyQuantity.toString()
+                }
+
+                if(currentFood.buyQuantity == 0){
+                    dialog.dismiss()
+                }
+            }
+
+            // Tambah ke keranjang
+            orderBtn.setOnClickListener{
+                OrderedFood.foodArray.add(currentFood)
+            }
 
             dialog.show()
             dialog.window?.setLayout(
@@ -81,7 +112,9 @@ class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodMode
         holder.price.text = foodList[position].getFormatedPriceString()
         holder.quantity.text = "${foodList[position].availableQua} ${foodList[position].quaUnit}"
         holder.category.text = foodList[position].getCategoryString()
-
+        holder.ratingNumber.text = foodList[position].rating.toString()
+        //holder.address.text = foodList[position].address
+        holder.distance.text = "${foodList[position].distance} meter"
         when(cat){
             CategoryModel.MAKANAN_BERAT -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
             CategoryModel.NON_HALAL -> holder.bg.setBackgroundResource(R.drawable.background_pink)
@@ -89,6 +122,7 @@ class CategoryFoodAdapter(val context: Context, val foodList: ArrayList<FoodMode
             CategoryModel.MINUMAN -> holder.bg.setBackgroundResource(R.drawable.background_pink)
             CategoryModel.BAHAN_MAKANAN -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
             CategoryModel.VEGAN -> holder.bg.setBackgroundResource(R.drawable.background_orange)
+            CategoryModel.MYSTERY_BOX -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
         }
     }
 
