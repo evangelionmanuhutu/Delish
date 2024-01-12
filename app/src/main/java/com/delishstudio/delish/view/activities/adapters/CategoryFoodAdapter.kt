@@ -95,7 +95,7 @@ class CategoryFoodAdapter(val foodList: ArrayList<FoodModel>, val cat: CategoryM
             orderBtn.setOnClickListener{
                 OrderedFood.foodArray.add(currentFood)
                 val intent = Intent(c, CheckoutActivity::class.java)
-                //startActivity(intent)
+                c.startActivity(intent)
             }
 
             dialog.show()

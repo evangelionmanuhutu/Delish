@@ -91,7 +91,7 @@ class MysteryBoxAdapter(val foodList: ArrayList<FoodModel>) : RecyclerView.Adapt
             orderBtn.setOnClickListener{
                 OrderedFood.foodArray.add(currentFood)
                 val intent = Intent(c, CheckoutActivity::class.java)
-                //startActivity(intent)
+                c.startActivity(intent)
             }
 
             dialog.show()
