@@ -34,6 +34,7 @@
                     android:background="@drawable/bg_rounded_green_button"
                     android:elevation="10dp"
                     android:text="Nearby"
+                    android:textAllCaps="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -47,6 +48,7 @@
                     android:background="@drawable/bg_rounded_green_button"
                     android:elevation="10dp"
                     android:text="Recomendation"
+                    android:textAllCaps="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/nearby_btn"

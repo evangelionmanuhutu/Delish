@@ -74,7 +74,7 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryM
             val dialog = Dialog(c)
 
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog.setContentView(R.layout.layout_bottom_sheet)
+            dialog.setContentView(R.layout.layout_sheet_add_food)
 
             val nama = dialog.findViewById<TextView>(R.id.bs_nama)
             val price = dialog.findViewById<TextView>(R.id.bs_price)
