@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "384504039049",
-    "project_id": "delish-3747c",
-    "storage_bucket": "delish-3747c.appspot.com"
+    "project_number": "281524305909",
+    "project_id": "delishapp-80d91",
+    "storage_bucket": "delishapp-80d91.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:384504039049:android:7788a55d863a4529416858",
+        "mobilesdk_app_id": "1:281524305909:android:92bb54e971fd6cc4e02abc",
         "android_client_info": {
           "package_name": "com.delishstudio.delish"
         }
       },
       "oauth_client": [
         {
-          "client_id": "384504039049-fjj32rfjk4ifrcc1rq2dtncsr6hvpb4v.apps.googleusercontent.com",
+          "client_id": "281524305909-ufdgkif8unf4jphobhjpgflepidtvhbb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBYOHNU-hFcm6shqT6sQhFK5ReaKuHmCZw"
+          "current_key": "AIzaSyBXcGzUaNlhhQ0ZI6y_eCCGDQWE5Tx7Qmo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "384504039049-fjj32rfjk4ifrcc1rq2dtncsr6hvpb4v.apps.googleusercontent.com",
+              "client_id": "281524305909-ufdgkif8unf4jphobhjpgflepidtvhbb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -9,10 +9,14 @@ import android.view.ViewGroup
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.FragmentProfileBinding
 import com.delishstudio.delish.view.activities.EditProfileActivity
+import com.delishstudio.delish.view.activities.SignInActivity
+import com.delishstudio.delish.view.activities.SignUpActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class ProfileFragment : Fragment() {
 
-    private lateinit var binding: FragmentProfileBinding
+    private lateinit var mBinding: FragmentProfileBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -22,16 +26,20 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         inflater.inflate(R.layout.fragment_profile, container, false)
-        binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val view = binding.root
-
+        mBinding = FragmentProfileBinding.inflate(inflater, container, false)
         setupButtons()
-
-        return view
+        return mBinding.root
     }
 
     private fun setupButtons() {
-        binding.profileEditButton.setOnClickListener{
+        mBinding.btLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(activity, SignInActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
+
+        mBinding.profileEditButton.setOnClickListener{
             val intent = Intent(activity, EditProfileActivity::class.java)
             startActivity(intent)
         }

@@ -3,20 +3,28 @@ package com.delishstudio.delish
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import androidx.fragment.app.Fragment
+import com.delishstudio.delish.databinding.ActivityMainBinding
 import com.delishstudio.delish.view.fragments.ProfileFragment
 import com.delishstudio.delish.view.fragments.HomeFragment
 import com.delishstudio.delish.view.fragments.MysteryBoxFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var bottomNavigationView: BottomNavigationView
+    private lateinit var mBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
-        setContentView(R.layout.activity_main)
+        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(mBinding.root)
 
-        bottomNavigationView = findViewById(R.id.bottom_navigation)
+        replaceFragment(HomeFragment())
+        bottomNavigation()
+    }
+
+    private fun bottomNavigation() {
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setOnItemSelectedListener{menuItem->
             when(menuItem.itemId){
                 R.id.navigation_home -> {
@@ -38,8 +46,6 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
-
-        replaceFragment(HomeFragment())
     }
 
     private fun replaceFragment(fragment: Fragment) {

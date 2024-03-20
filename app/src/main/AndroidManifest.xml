@@ -16,6 +16,12 @@
         android:theme="@style/Theme.Delish"
         tools:targetApi="tiramisu">
         <activity
+            android:name=".view.activities.SignUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.CheckoutActivity"
             android:exported="false" />
         <activity
@@ -43,21 +49,14 @@
             android:name=".view.activities.CategoryBahanMakananActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activities.auth.BoardingAuthActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".view.activities.SignInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".view.activities.auth.LoginActivity"
-            android:exported="false" />
-        <activity android:name=".view.activities.auth.RegisterActivity" />
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

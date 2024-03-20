@@ -1,27 +1,8 @@
 <resources>
     <string name="app_name">Delish</string>
-    <string name="motto">food redistribution for a
-        hunger-free tomorrow
-    </string>
-    <string name="txt_login">Login</string>
-    <string name="txt_belum_punya_akun_yang_terdaftar">Belum punya akun yang terdaftar?</string>
-    <string name="txt_kamu_bisa">Kamu bisa</string>
-    <string name="txt_daftar">Daftar!</string>
-    <string name="btn_login">Login</string>
-    <string name="default_web_client_id">384504039049-fjj32rfjk4ifrcc1rq2dtncsr6hvpb4v.apps.googleusercontent.com
-    </string>
+    <string name="motto">food redistribution for a\nhunger-free tomorrow</string>
+    <string name="default_web_client_id">281524305909-ufdgkif8unf4jphobhjpgflepidtvhbb.apps.googleusercontent.com</string>
     <string name="txt_btn_beli_sekarang">Beli Sekarang</string>
     <string name="txt_bg_food_item">bg_food_item</string>
-    <string name="txt_register">Register</string>
-    <string name="txt_sudah_punya_akun_yang_terdaftar">Sudah punya akun yang terdaftar?</string>
-    <string name="txt_tv_login">Login!</string>
-    <string name="hint_masukan_alamat_email">Masukan alamat email</string>
-    <string name="tv_email">Email</string>
-    <string name="tv_password">Password</string>
-    <string name="hint_masukan_password">Masukan password</string>
-    <string name="tv_verifikasi_password">verifikasi password</string>
-    <string name="hint_verifikasi_password">Verifikasi password</string>
-    <string name="txt_login_with_google">Login with Google</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
