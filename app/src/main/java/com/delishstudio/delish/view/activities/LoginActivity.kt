@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import com.delishstudio.delish.MainActivity
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityLoginBinding
+import com.delishstudio.delish.utils.ActivityUtils
 import com.delishstudio.delish.view.fragments.HomeFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -64,9 +65,7 @@ class LoginActivity : AppCompatActivity() {
     private fun handleResult(completedTask: Task<GoogleSignInAccount>) {
         try {
             val account: GoogleSignInAccount = completedTask.getResult(ApiException::class.java)
-            if (account != null) {
-                UpdateUI(account)
-            }
+            UpdateUI(account)
         }catch (e: ApiException){
             Toast.makeText(this,e.toString(), Toast.LENGTH_SHORT).show()
         }
@@ -77,14 +76,14 @@ class LoginActivity : AppCompatActivity() {
         val credential = GoogleAuthProvider.getCredential(account.idToken, null)
         mFirebaseAuth.signInWithCredential(credential).addOnCompleteListener { task->
             if(task.isSuccessful) {
-                supportFragmentManager.beginTransaction().replace(R.id.frame_container, HomeFragment()).commit()
+                ActivityUtils.navigateToFragment(this, HomeFragment())
             }
         }
     }
 
     private fun redirectToMainActivity() {
         Toast.makeText(this, "redirectToMainActivity", Toast.LENGTH_SHORT).show()
-        supportFragmentManager.beginTransaction().replace(R.id.frame_container, HomeFragment()).commit()
+        ActivityUtils.navigateToFragment(this, HomeFragment())
         finish()
     }
 

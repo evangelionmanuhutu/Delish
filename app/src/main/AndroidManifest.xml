@@ -16,6 +16,9 @@
         android:theme="@style/Theme.Delish"
         tools:targetApi="tiramisu">
         <activity
+            android:name=".view.activities.AccountSettingsActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.activities.SignUpActivity"
             android:exported="false" />
         <activity
@@ -53,7 +56,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

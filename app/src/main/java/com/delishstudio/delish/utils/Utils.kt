@@ -1,10 +1,22 @@
 package com.delishstudio.delish.utils
 
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.delishstudio.delish.R
 
-class Utils {
+class FragmentUtils : Fragment() {
     companion object {
-        fun replaceFragment(fragment: Fragment) {
+        public fun navigateToFragment(currentFragment :Fragment, other: Fragment) {
+            val fragmentManager = currentFragment.requireActivity().supportFragmentManager
+            fragmentManager.beginTransaction().replace(R.id.frameContainer, other).commit()
+        }
+    }
+}
+
+class ActivityUtils: AppCompatActivity() {
+    companion object {
+        public fun navigateToFragment(activity: AppCompatActivity, fragment: Fragment) {
+            activity.supportFragmentManager.beginTransaction().replace(R.id.frameContainer, fragment).commit()
         }
     }
 }
