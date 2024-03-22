@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-//    id("com.android.application")
     id("com.google.gms.google-services")
 }
 
@@ -57,14 +56,16 @@ dependencies {
     implementation("androidx.cardview:cardview:1.0.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("com.google.firebase:firebase-auth:22.3.1")
+    implementation("androidx.activity:activity:1.8.2")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     // Firebase
-    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation(platform("com.google.firebase:firebase-bom:32.7.4"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("com.google.android.gms:play-services-auth:21.0.0")
     implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-database-ktx")
     // ViewModel
     implementation ("androidx.activity:activity-ktx:1.8.2")
     implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")

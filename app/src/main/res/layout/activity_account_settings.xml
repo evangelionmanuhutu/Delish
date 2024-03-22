@@ -8,6 +8,7 @@
     tools:context=".view.activities.AccountSettingsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:paddingStart="10dp"
@@ -160,4 +161,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

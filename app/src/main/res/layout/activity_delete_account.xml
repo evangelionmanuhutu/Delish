@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.DeleteAccountActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btDeleteAccount"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/red"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/poppins_medium"
+                android:text="Hapus Akun"
+                android:textAlignment="center"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout10">
+
+        <TextView
+            android:id="@+id/txtCaution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Yang kamu harus tahu"
+            android:textColor="@color/black_erie"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtNo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="1."
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/txtCaution"
+            app:layout_constraintTop_toBottomOf="@id/txtCaution" />
+
+        <TextView
+            android:id="@+id/txtCautionList1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/caution_list1"
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/txtNo1"
+            app:layout_constraintTop_toTopOf="@id/txtNo1" />
+
+        <TextView
+            android:id="@+id/txtNo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingTop="8dp"
+
+            android:text="2."
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/txtCaution"
+            app:layout_constraintTop_toBottomOf="@id/txtCautionList1" />
+
+        <TextView
+            android:id="@+id/txtCautionList2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingTop="8dp"
+            android:text="@string/caution_list2"
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/txtNo2"
+            app:layout_constraintTop_toTopOf="@id/txtNo2" />
+
+        <TextView
+            android:id="@+id/txtNo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingTop="8dp"
+            android:text="3."
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/txtCaution"
+            app:layout_constraintTop_toBottomOf="@id/txtCautionList2" />
+
+        <TextView
+            android:id="@+id/txtCautionList3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingTop="8dp"
+            android:text="@string/caution_list3"
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/txtNo3"
+            app:layout_constraintTop_toTopOf="@id/txtNo3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+        <TextView
+            android:id="@+id/txtUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Nama Pengguna"
+            android:textColor="@color/black_erie"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtUserPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="08123456789-"
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/txtUsername"
+            app:layout_constraintTop_toBottomOf="@id/txtUsername" />
+
+        <TextView
+            android:id="@+id/txtUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="example@gmail.com"
+            android:textColor="@color/black_erie"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/txtUsername"
+            app:layout_constraintTop_toBottomOf="@id/txtUserPhone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btBack"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="16dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Hapus Akun"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

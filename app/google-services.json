@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "281524305909",
+    "firebase_url": "https://delishapp-80d91-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "delishapp-80d91",
     "storage_bucket": "delishapp-80d91.appspot.com"
   },
@@ -14,7 +15,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "281524305909-ufdgkif8unf4jphobhjpgflepidtvhbb.apps.googleusercontent.com",
+          "client_id": "281524305909-ccgl84ladeub8v176tr4pkm7ea96p831.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.delishstudio.delish",
+            "certificate_hash": "16c3333bb605e43197456b2f497eba69d095d5bc"
+          }
+        },
+        {
+          "client_id": "281524305909-v3bjfhbuiic3uf8abtrlhehufvt70v0b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

@@ -10,71 +10,69 @@ import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.delishstudio.delish.R
-import com.delishstudio.delish.databinding.ActivityAccountSettingsBinding
+import com.delishstudio.delish.databinding.ActivityCheckoutBinding
+import com.delishstudio.delish.databinding.ActivityDeleteAccountBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
-class AccountSettingsActivity : AppCompatActivity() {
-    private lateinit var mBinding: ActivityAccountSettingsBinding
+class DeleteAccountActivity : AppCompatActivity() {
+    private lateinit var mBinding: ActivityDeleteAccountBinding
     private var mIsDialogShown: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mBinding = ActivityAccountSettingsBinding.inflate(layoutInflater)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
+        mBinding = ActivityDeleteAccountBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
-        onSetupButtons()
+        setupButtons()
     }
 
-    private fun onSetupButtons() {
-        mBinding.btProfileSettingsBack.setOnClickListener {
-            this.onBackPressed()
-        }
-
-        mBinding.hapusAkun.setOnClickListener {
-            val intent = Intent(this, DeleteAccountActivity::class.java)
-            startActivity(intent)
-        }
-
-        mBinding.keluar.setOnClickListener {
-            showLoggedOutConfirmation()
+    private fun setupButtons() {
+        mBinding.btDeleteAccount.setOnClickListener {
+            showDeleteAccountConfirmation()
         }
     }
 
-    private fun showLoggedOutConfirmation() {
-        if(mIsDialogShown) {
+    private fun showDeleteAccountConfirmation() {
+        if(mIsDialogShown)
             return
-        }
 
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.layout_confirmation)
         val confirmationText = dialog.findViewById<TextView>(R.id.txt_confirmation_status)
-        confirmationText.text = "Konfirmasi Keluar"
+        confirmationText.text = "Hapus Akun"
         val questionText = dialog.findViewById<TextView>(R.id.txt_confirmation_question)
-        questionText.text = "Apakah kamu yakin mau keluar?"
-
+        questionText.text = "Apa kamu yakin mau lanjut hapus akun\u2028kamu di aplikasi Delish?"
         val confirmBtn = dialog.findViewById<AppCompatButton>(R.id.bt_confirm)
-        confirmBtn.text = "Keluar"
+        confirmBtn.text = "Hapus"
 
         val cancelBtn = dialog.findViewById<AppCompatButton>(R.id.bt_cancel)
 
-        confirmBtn.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
-
-            // Create intent to navigate to SignInActivity and clear task stack
-            val intent = Intent(this, AuthBoardingActivity::class.java)
-            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intent)
-            finish()
+        confirmBtn.setOnClickListener {
+            FirebaseAuth.getInstance().currentUser?.delete()?.addOnCompleteListener { task->
+                if (task.isSuccessful)
+                {
+                    val intent = Intent(this, AuthBoardingActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                    finish()
+                }
+                else
+                {
+                    Toast.makeText(this, "Failed to delete you account", Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }
+            }
         }
 
         cancelBtn.setOnClickListener{

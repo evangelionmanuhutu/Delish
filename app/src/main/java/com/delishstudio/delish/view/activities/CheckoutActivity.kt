@@ -5,7 +5,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Gravity
 import android.view.ViewGroup
 import android.view.Window
@@ -15,14 +14,14 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
-import com.delishstudio.delish.model.OrderedFood
-import com.delishstudio.delish.model.UserModel
+import com.delishstudio.delish.databinding.ActivityCheckoutBinding
+import com.delishstudio.delish.model.User
 import com.delishstudio.delish.view.activities.adapters.OrderedFoodAdapter
 
 class CheckoutActivity : AppCompatActivity() {
+    private lateinit var mBinding: ActivityCheckoutBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: OrderedFoodAdapter
-    private lateinit var userSample: UserModel
     private var isDialogShown = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,31 +29,18 @@ class CheckoutActivity : AppCompatActivity() {
 
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
-        setContentView(R.layout.activity_checkout)
-
-        userSample = UserModel("Kania", "0812345678")
-        userSample.address = "Jl. Kenangan Mantan No.12 Rt.18 Rw.06 Buah Batu, Bandung, Jawa Barat"
-
-        var i = 0
-        var totalBiaya: Int = 0
-        for (f in OrderedFood.foodArray) {
-            totalBiaya += f.price * f.buyQuantity
-            i++
-        }
-        userSample.cost = totalBiaya
-
+        mBinding = ActivityCheckoutBinding.inflate(layoutInflater)
+        setContentView(mBinding.root)
         setupAdapter()
         setupUserBindingData()
-        setupButtons()
+        onSetupButtons()
     }
 
     private fun setupAdapter() {
-        recyclerView = findViewById(R.id.checkout_ordered_food_recyclerview)
+        recyclerView = mBinding.checkoutOrderedFoodRecyclerview
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        Log.e("Food Array", OrderedFood.foodArray.size.toString())
-
-        adapter = OrderedFoodAdapter(userSample)
+        adapter = OrderedFoodAdapter(User.Main)
         recyclerView.adapter = adapter
     }
 
@@ -63,21 +49,18 @@ class CheckoutActivity : AppCompatActivity() {
         var userAddress: TextView = findViewById(R.id.checkout_user_address)
         var userPhone: TextView = findViewById(R.id.checkout_user_phone_number)
 
-        userName.text = userSample.name
-        userAddress.text = userSample.address
-        userPhone.text = userSample.phoneNumber
+        userName.text = User.Main.name
+        userPhone.text = User.Main.phone
     }
 
-    private fun setupButtons() {
-
-        findViewById<AppCompatButton>(R.id.checkout_pesan_sekarang_btn).setOnClickListener {
+    private fun onSetupButtons() {
+        mBinding.checkoutPesanSekarangBtn.setOnClickListener {
             setupPesanSekarangBtn()
         }
-
-        findViewById<AppCompatButton>(R.id.checkout_metode_pembayaran_btn).setOnClickListener {
+        mBinding.checkoutMetodePembayaranBtn.setOnClickListener {
             showMetodePembayaranDialog()
         }
-        findViewById<AppCompatButton>(R.id.checkout_pilih_kurir_btn).setOnClickListener() {
+        mBinding.checkoutPilihKurirBtn.setOnClickListener() {
             showPilihKurirDialog()
         }
     }

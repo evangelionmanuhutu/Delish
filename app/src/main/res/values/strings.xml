@@ -1,8 +1,11 @@
 <resources>
     <string name="app_name">Delish</string>
-    <string name="motto">food redistribution for a\nhunger-free tomorrow</string>
+    <string name="motto">Stop food waste for a\nhunger-free tomorrow</string>
     <string name="google_sign_in_web_client_id">281524305909-ufdgkif8unf4jphobhjpgflepidtvhbb.apps.googleusercontent.com</string>
     <string name="txt_btn_beli_sekarang">Beli Sekarang</string>
     <string name="txt_bg_food_item">bg_food_item</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="caution_list1">Semua informasi mengenai data pribadi, nomor ponsel, email, alamat, lencana, dan semua postingan forum tidak lagi tersedia di aplikasi Delish.</string>
+    <string name="caution_list2">Semua informasi pribadi Anda akan dihapus dari sistem basis data kami.</string>
+    <string name="caution_list3">Anda tidak bisa lagi mendaftarkan akun lain di aplikasi Delish menggunakan perangkat yang sama.</string>
 </resources>
