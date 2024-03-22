@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.FragmentHomeBinding
-import com.delishstudio.delish.model.CategoryModel
+import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.view.activities.CartActivity
 import com.delishstudio.delish.view.activities.CategoryBahanMakananActivity
@@ -36,11 +36,11 @@ class HomeFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
         val foods = listOf(
-            FoodModel("Nasi Padang", 12, 10000, CategoryModel.MAKANAN_BERAT),
-            FoodModel("Donat", 12, 5000, CategoryModel.CAMILAN),
-            FoodModel("Nasi Goreng", 12, 40000, CategoryModel.MAKANAN_BERAT),
-            FoodModel("Bir", 12, 40000, CategoryModel.MINUMAN),
-            FoodModel("Coca Cola", 12, 40000, CategoryModel.MINUMAN)
+            FoodModel("Nasi Padang", 12, 10000, FoodCategory.MAKANAN_BERAT),
+            FoodModel("Donat", 12, 5000, FoodCategory.CAMILAN),
+            FoodModel("Nasi Goreng", 12, 40000, FoodCategory.MAKANAN_BERAT),
+            FoodModel("Bir", 12, 40000, FoodCategory.MINUMAN),
+            FoodModel("Coca Cola", 12, 40000, FoodCategory.MINUMAN)
         )
 
         recyclerView.adapter = FoodListAdapter(foods)

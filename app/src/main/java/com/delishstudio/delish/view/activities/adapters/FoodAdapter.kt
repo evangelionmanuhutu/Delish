@@ -16,11 +16,11 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
-import com.delishstudio.delish.model.CategoryModel
+import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.model.OrderedFood
 import com.delishstudio.delish.view.activities.CheckoutActivity
 
-class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryModel) : RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
+class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: FoodCategory) : RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
     final var m_Category = cat
     inner class FoodHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView
@@ -36,7 +36,7 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryM
         var isDialogShown = false
 
         init {
-            if (m_Category == CategoryModel.MYSTERY_BOX) {
+            if (m_Category == FoodCategory.MYSTERY_BOX) {
                 name = itemView.findViewById(R.id.mystery_box_nama_makanan)
                 quantity = itemView.findViewById(R.id.mystery_box_quantity)
                 category = itemView.findViewById(R.id.mystery_box_category)
@@ -138,7 +138,7 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryM
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodHolder {
         var layoutID = 0
 
-        if (m_Category == CategoryModel.MYSTERY_BOX) {
+        if (m_Category == FoodCategory.MYSTERY_BOX) {
             layoutID = R.layout.layout_mystery_box_card
         }
         else {
@@ -157,13 +157,13 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: CategoryM
         //holder.address.text = foodList[position].address
         holder.distance.text = "${foodList[position].distance} meter"
         when(cat){
-            CategoryModel.MAKANAN_BERAT -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
-            CategoryModel.NON_HALAL -> holder.bg.setBackgroundResource(R.drawable.background_pink)
-            CategoryModel.CAMILAN -> holder.bg.setBackgroundResource(R.drawable.background_orange)
-            CategoryModel.MINUMAN -> holder.bg.setBackgroundResource(R.drawable.background_pink)
-            CategoryModel.BAHAN_MAKANAN -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
-            CategoryModel.VEGAN -> holder.bg.setBackgroundResource(R.drawable.background_orange)
-            CategoryModel.MYSTERY_BOX -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
+            FoodCategory.MAKANAN_BERAT -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
+            FoodCategory.NON_HALAL -> holder.bg.setBackgroundResource(R.drawable.background_pink)
+            FoodCategory.CAMILAN -> holder.bg.setBackgroundResource(R.drawable.background_orange)
+            FoodCategory.MINUMAN -> holder.bg.setBackgroundResource(R.drawable.background_pink)
+            FoodCategory.BAHAN_MAKANAN -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
+            FoodCategory.VEGAN -> holder.bg.setBackgroundResource(R.drawable.background_orange)
+            FoodCategory.MYSTERY_BOX -> holder.bg.setBackgroundResource(R.drawable.background_light_blue)
         }
     }
 

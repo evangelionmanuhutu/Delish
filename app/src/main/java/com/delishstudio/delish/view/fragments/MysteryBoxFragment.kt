@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.FragmentMysteryBoxBinding
-import com.delishstudio.delish.model.CategoryModel
+import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.view.activities.adapters.FoodAdapter
 
@@ -40,13 +40,13 @@ class MysteryBoxFragment : Fragment() {
         recyclerView = view.findViewById(R.id.mystery_box_recyclerview)
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
-        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
-        foodList.add(FoodModel("Random Food", 1, 1000000, CategoryModel.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, FoodCategory.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, FoodCategory.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, FoodCategory.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, FoodCategory.MYSTERY_BOX, "KG"))
+        foodList.add(FoodModel("Random Food", 1, 1000000, FoodCategory.MYSTERY_BOX, "KG"))
 
-        adapter = FoodAdapter(foodList, CategoryModel.MYSTERY_BOX)
+        adapter = FoodAdapter(foodList, FoodCategory.MYSTERY_BOX)
         recyclerView.adapter = adapter
     }
 }

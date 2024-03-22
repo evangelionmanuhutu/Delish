@@ -10,6 +10,7 @@ class UserModel(
 ) {
     public var cost: Int = 0
     public var address: String = ""
+    public var payment: PaymentMethod = PaymentMethod.GOPAY
 
     fun getFormattedCost(): String {
         val formatter = NumberFormat.getInstance(Locale.getDefault())

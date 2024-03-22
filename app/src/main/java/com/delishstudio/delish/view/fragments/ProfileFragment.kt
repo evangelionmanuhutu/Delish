@@ -11,6 +11,7 @@ import com.delishstudio.delish.databinding.FragmentProfileBinding
 import com.delishstudio.delish.model.User
 import com.delishstudio.delish.view.activities.AccountSettingsActivity
 import com.delishstudio.delish.view.activities.EditProfileActivity
+import com.delishstudio.delish.view.activities.PaymentMethodActivity
 
 class ProfileFragment : Fragment() {
     private lateinit var mBinding: FragmentProfileBinding
@@ -33,6 +34,12 @@ class ProfileFragment : Fragment() {
     }
 
     private fun onSetupButtons() {
+
+        mBinding.metodePembayaran.setOnClickListener{
+            val intent = Intent(activity, PaymentMethodActivity::class.java)
+            startActivity(intent)
+        }
+
         mBinding.pengaturanAkun.setOnClickListener {
             val intent = Intent(activity, AccountSettingsActivity::class.java)
             startActivity(intent)

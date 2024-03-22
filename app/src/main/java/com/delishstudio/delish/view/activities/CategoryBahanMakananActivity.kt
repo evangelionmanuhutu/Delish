@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
-import com.delishstudio.delish.model.CategoryModel
+import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.view.activities.adapters.FoodAdapter
 
 class CategoryBahanMakananActivity : AppCompatActivity(){
@@ -21,10 +21,10 @@ class CategoryBahanMakananActivity : AppCompatActivity(){
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
         setContentView(R.layout.activity_category_food)
-        setupAdapters(CategoryModel.BAHAN_MAKANAN)
+        setupAdapters(FoodCategory.BAHAN_MAKANAN)
     }
 
-    private fun setupAdapters(cat: CategoryModel) {
+    private fun setupAdapters(cat: FoodCategory) {
         recyclerView = findViewById(R.id.cat_food_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -37,7 +37,7 @@ class CategoryBahanMakananActivity : AppCompatActivity(){
         foodList.add(FoodModel("Tepung G", 12, 10000, cat, "KG"))
         foodList.add(FoodModel("Tepung H", 12, 10000, cat, "KG"))
 
-        adapter = FoodAdapter(foodList, CategoryModel.BAHAN_MAKANAN)
+        adapter = FoodAdapter(foodList, FoodCategory.BAHAN_MAKANAN)
 
         recyclerView.adapter = adapter
     }

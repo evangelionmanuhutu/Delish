@@ -10,6 +10,25 @@ import com.google.firebase.database.ValueEventListener
 class User {
     companion object {
         public var Main: UserModel = UserModel("", "", "")
+
+        public fun Update() {
+            val firebaseRef = FirebaseDatabase.getInstance().getReference(DatabaseStrRef.USERS)
+            val query = firebaseRef.orderByChild(DatabaseStrRef.EMAIL).equalTo(Main.email)
+            query.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onDataChange(dataSnapshot: DataSnapshot) {
+                    for (userSnapshot in dataSnapshot.children) {
+                        val userKey = userSnapshot.key
+                        userKey?.let {
+                            firebaseRef.child(it).setValue(Main)
+                        }
+                    }
+                }
+
+                override fun onCancelled(databaseError: DatabaseError) {
+                }
+            })
+
+        }
         public fun Available(callback: (Boolean) -> Unit)
         {
             if (Main.name?.isEmpty() == true)

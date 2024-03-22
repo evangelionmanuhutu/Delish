@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
-import com.delishstudio.delish.model.CategoryModel
+import com.delishstudio.delish.model.FoodCategory
 import com.delishstudio.delish.view.activities.adapters.FoodAdapter
 
 class CategoryCamilanActivity : AppCompatActivity() {
@@ -20,10 +20,10 @@ class CategoryCamilanActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(R.layout.activity_category_food)
 
-        setupAdapters(CategoryModel.CAMILAN)
+        setupAdapters(FoodCategory.CAMILAN)
     }
 
-    private fun setupAdapters(cat: CategoryModel) {
+    private fun setupAdapters(cat: FoodCategory) {
         val recyclerView = findViewById<RecyclerView>(R.id.cat_food_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
