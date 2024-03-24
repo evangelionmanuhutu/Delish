@@ -11,6 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:itemCount="1"
         tools:listitem="@layout/layout_cart_item" />
@@ -82,13 +84,13 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_signup"
+            android:id="@+id/bt_beli"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_rounded_green_button"
             android:elevation="5dp"
-            android:text="Lanjutkan"
+            android:text="Beli"
             android:textAllCaps="false"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"

@@ -8,13 +8,21 @@ class UserModel(
     var phone: String? = null,
     var email: String? = null
 ) {
-    public var cost: Int = 0
-    public var address: String = ""
-    public var payment: PaymentMethod = PaymentMethod.GOPAY
+    var address: String = ""
+    var payment: PaymentMethod = PaymentMethod.GOPAY
+    var orderedFood: ArrayList<FoodModel> = ArrayList()
+
+    private var totalCost: Float = 0.0f
+    fun calculateCost() {
+        totalCost = 0.0f
+        for (f in orderedFood) {
+            totalCost += f.price * f.buyQuantity
+        }
+    }
 
     fun getFormattedCost(): String {
         val formatter = NumberFormat.getInstance(Locale.getDefault())
-        val formattedCurrency = formatter.format(cost)
+        val formattedCurrency = formatter.format(totalCost)
         return "Rp$formattedCurrency"
     }
 }

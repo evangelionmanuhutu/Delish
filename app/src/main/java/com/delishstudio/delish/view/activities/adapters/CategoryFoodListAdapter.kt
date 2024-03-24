@@ -17,10 +17,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.FoodCategory
-import com.delishstudio.delish.model.OrderedFood
+import com.delishstudio.delish.model.User
 import com.delishstudio.delish.view.activities.CheckoutActivity
 
-class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: FoodCategory) : RecyclerView.Adapter<FoodAdapter.FoodHolder>() {
+class CategoryFoodListAdapter(val foodList: ArrayList<FoodModel>, private val cat: FoodCategory) : RecyclerView.Adapter<CategoryFoodListAdapter.FoodHolder>() {
+
     final var m_Category = cat
     inner class FoodHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView
@@ -114,9 +115,10 @@ class FoodAdapter(val foodList: ArrayList<FoodModel>, private val cat: FoodCateg
                 isDialogShown = false
             }
 
-            // Tambah ke keranjang
             orderBtn.setOnClickListener{
-                OrderedFood.foodArray.add(currentFood)
+                User.Main.orderedFood.add(currentFood)
+                User.Main.calculateCost()
+
                 val intent = Intent(itemView.context, CheckoutActivity::class.java)
                 itemView.context.startActivity(intent)
             }

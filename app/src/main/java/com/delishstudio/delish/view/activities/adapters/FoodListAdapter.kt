@@ -1,23 +1,19 @@
 package com.delishstudio.delish.view.activities.adapters
 
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.Window
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
-import com.delishstudio.delish.model.OrderedFood
 import com.delishstudio.delish.view.activities.CheckoutActivity
 
+// FoodList untuk list semua makanan yang ada di aplikasi
 class FoodListAdapter(val foodList: List<FoodModel>) : RecyclerView.Adapter<FoodListAdapter.FoodHolder>(){
+    private var mConfirm: Boolean = false
 
     inner class FoodHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView

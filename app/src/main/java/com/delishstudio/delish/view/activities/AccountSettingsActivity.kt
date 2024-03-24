@@ -9,15 +9,12 @@ import android.view.Gravity
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.core.content.ContextCompat
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityAccountSettingsBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
 
 class AccountSettingsActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityAccountSettingsBinding
@@ -70,7 +67,6 @@ class AccountSettingsActivity : AppCompatActivity() {
         confirmBtn.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
 
-            // Create intent to navigate to SignInActivity and clear task stack
             val intent = Intent(this, AuthBoardingActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)

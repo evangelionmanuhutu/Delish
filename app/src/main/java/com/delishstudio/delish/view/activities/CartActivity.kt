@@ -9,16 +9,25 @@ import com.delishstudio.delish.databinding.ActivityCartBinding
 @Suppress("DEPRECATION")
 class CartActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCartBinding
+    private lateinit var mBinding: ActivityCartBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityCartBinding.inflate(layoutInflater)
+        mBinding = ActivityCartBinding.inflate(layoutInflater)
         window.statusBarColor = ContextCompat.getColor(this, R.color.white)
         supportActionBar?.hide()
-        setContentView(binding.root)
+        setContentView(mBinding.root)
+    }
 
-        binding.cartBackButton.setOnClickListener {
+    override fun onStart() {
+        super.onStart()
+
+        mBinding.btBeli.setOnClickListener {
+
+        }
+
+        mBinding.cartBackButton.setOnClickListener {
             onBackPressed()
         }
     }

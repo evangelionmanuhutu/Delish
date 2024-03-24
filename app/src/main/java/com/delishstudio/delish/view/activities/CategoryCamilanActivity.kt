@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.FoodCategory
-import com.delishstudio.delish.view.activities.adapters.FoodAdapter
+import com.delishstudio.delish.view.activities.adapters.CategoryFoodListAdapter
 
 class CategoryCamilanActivity : AppCompatActivity() {
 
@@ -37,7 +37,7 @@ class CategoryCamilanActivity : AppCompatActivity() {
         foodList.add(FoodModel("Camilan H", 31, 23000, cat))
         foodList.add(FoodModel("Camilan I", 32, 17000, cat))
         foodList.add(FoodModel("Camilan J", 86, 13000, cat))
-        val adapter = FoodAdapter(foodList, cat)
+        val adapter = CategoryFoodListAdapter(foodList, cat)
         recyclerView.adapter = adapter
     }
 }

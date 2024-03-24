@@ -19,7 +19,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/nama"
+                android:id="@+id/txtNamaMakanan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -27,11 +27,11 @@
                 android:fontFamily="@font/poppins_semibold"
                 android:text="NASI PADANG"
                 android:textColor="@color/green_dark"
-                app:layout_constraintStart_toEndOf="@+id/check_box"
+                app:layout_constraintStart_toEndOf="@+id/imgBg"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <FrameLayout
-                android:id="@+id/check_box"
+                android:id="@+id/imgBg"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:background="@color/orange"
@@ -64,17 +64,17 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/alamat"
+                android:id="@+id/txtAlamat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_light"
                 android:text="RM Minahasa"
                 android:textColor="@color/green_dark"
-                app:layout_constraintStart_toStartOf="@+id/nama"
-                app:layout_constraintTop_toBottomOf="@+id/nama" />
+                app:layout_constraintStart_toStartOf="@+id/txtNamaMakanan"
+                app:layout_constraintTop_toBottomOf="@+id/txtNamaMakanan" />
 
             <TextView
-                android:id="@+id/counter"
+                android:id="@+id/txtCounter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -93,8 +93,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@android:color/transparent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/nama"
-                app:layout_constraintTop_toBottomOf="@+id/alamat"
+                app:layout_constraintStart_toStartOf="@+id/txtNamaMakanan"
+                app:layout_constraintTop_toBottomOf="@+id/txtAlamat"
                 app:srcCompat="@drawable/ic_min_button" />
 
             <ImageButton

@@ -16,12 +16,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityCheckoutBinding
 import com.delishstudio.delish.model.User
-import com.delishstudio.delish.view.activities.adapters.OrderedFoodAdapter
+import com.delishstudio.delish.view.activities.adapters.CheckoutFoodListAdapter
 
-class CheckoutActivity : AppCompatActivity() {
+class CheckoutActivity : AppCompatActivity(), CheckoutFoodListAdapter.OnUpdateListener {
+
     private lateinit var mBinding: ActivityCheckoutBinding
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: OrderedFoodAdapter
+    private lateinit var adapter: CheckoutFoodListAdapter
     private var isDialogShown = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +32,7 @@ class CheckoutActivity : AppCompatActivity() {
         supportActionBar?.hide()
         mBinding = ActivityCheckoutBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+
         setupAdapter()
         setupUserBindingData()
         onSetupButtons()
@@ -40,17 +42,26 @@ class CheckoutActivity : AppCompatActivity() {
         recyclerView = mBinding.checkoutOrderedFoodRecyclerview
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        adapter = OrderedFoodAdapter(User.Main)
+        adapter = CheckoutFoodListAdapter(User.Main)
+        adapter.setOnUpdateListener(this)
         recyclerView.adapter = adapter
+    }
+
+    override fun onUpdate() {
+        val totalCostTextView: TextView = findViewById(R.id.checkout_total_cost)
+        totalCostTextView.text = User.Main.getFormattedCost()
     }
 
     private fun setupUserBindingData() {
         var userName: TextView = findViewById(R.id.checkout_username)
         var userAddress: TextView = findViewById(R.id.checkout_user_address)
         var userPhone: TextView = findViewById(R.id.checkout_user_phone_number)
+        var totalCost: TextView = findViewById(R.id.checkout_total_cost)
 
         userName.text = User.Main.name
         userPhone.text = User.Main.phone
+        userAddress.text = User.Main.address
+        totalCost.text = User.Main.getFormattedCost()
     }
 
     private fun onSetupButtons() {

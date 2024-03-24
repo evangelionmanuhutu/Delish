@@ -1,18 +1,26 @@
 package com.delishstudio.delish.view.activities.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.widget.AppCompatButton
 import androidx.recyclerview.widget.RecyclerView
 import com.delishstudio.delish.R
-import com.delishstudio.delish.model.FoodModel
-import com.delishstudio.delish.model.OrderedFood
+import com.delishstudio.delish.model.User
 import com.delishstudio.delish.model.UserModel
 
-class OrderedFoodAdapter(val user: UserModel) : RecyclerView.Adapter<OrderedFoodAdapter.FoodHolder>() {
+// Checkout Food untuk makanan yang ingin dibeli dan juga untuk keranjang
+class CheckoutFoodListAdapter(val user: UserModel) : RecyclerView.Adapter<CheckoutFoodListAdapter.FoodHolder>() {
+
+    interface OnUpdateListener {
+        fun onUpdate()
+    }
+    private var onUpdateListener: OnUpdateListener? = null
+    fun setOnUpdateListener(listener: OnUpdateListener) {
+        onUpdateListener = listener
+    }
 
     inner class FoodHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var name: TextView
@@ -34,32 +42,27 @@ class OrderedFoodAdapter(val user: UserModel) : RecyclerView.Adapter<OrderedFood
         }
 
         private fun setupButtons() {
-
             incrementBtn.setOnClickListener{
-                val currentFood = OrderedFood.foodArray[bindingAdapterPosition]
-                currentFood.buyQuantity++
-                counter.text = currentFood.buyQuantity.toString()
+                User.Main.orderedFood[bindingAdapterPosition].buyQuantity++
+                User.Main.calculateCost()
+                counter.text = User.Main.orderedFood[bindingAdapterPosition].buyQuantity.toString()
+                onUpdateListener?.onUpdate() // Notify listener
             }
 
             decrementBtn.setOnClickListener{
-                val currentFood = OrderedFood.foodArray[bindingAdapterPosition]
+                val currentFood = User.Main.orderedFood[bindingAdapterPosition]
                 if (currentFood.buyQuantity > 0) {
                     currentFood.buyQuantity--
+                    User.Main.calculateCost()
                 }
-                counter.text = currentFood.buyQuantity.toString()
+                // delete food if buy quantity is less than 1
+                if (currentFood.buyQuantity < 1) {
+                    User.Main.orderedFood.remove(currentFood)
+                    Toast.makeText(itemView.context, "${currentFood.name} Food removed", Toast.LENGTH_SHORT).show()
+                }
+                counter.text = User.Main.orderedFood[bindingAdapterPosition].buyQuantity.toString()
+                onUpdateListener?.onUpdate() // Notify listener
             }
-
-            /*
-            counter.text = currentFood.buyQuantity.toString()
-
-            var i = 0
-            var totalBiaya: Int = 0
-            for (f in OrderedFood.foodArray) {
-                totalBiaya += f.price * f.buyQuantity
-                i++
-            }
-            user.cost = totalBiaya
-            */
         }
     }
 
@@ -68,13 +71,11 @@ class OrderedFoodAdapter(val user: UserModel) : RecyclerView.Adapter<OrderedFood
     }
 
     override fun getItemCount(): Int {
-        return OrderedFood.foodArray.size
+        return  User.Main.orderedFood.size
     }
 
     override fun onBindViewHolder(holder: FoodHolder, position: Int) {
-        Log.e("Bind Holder Delish", position.toString())
-
-        val currentFood = OrderedFood.foodArray[position]
+        val currentFood =  User.Main.orderedFood[position]
         holder.name.text = currentFood.name
         holder.address.text = currentFood.address
         holder.price.text = currentFood.getFormatedPriceString()

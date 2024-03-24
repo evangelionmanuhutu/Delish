@@ -9,7 +9,7 @@ import com.delishstudio.delish.R
 import com.delishstudio.delish.databinding.ActivityCategoryFoodBinding
 import com.delishstudio.delish.model.FoodModel
 import com.delishstudio.delish.model.FoodCategory
-import com.delishstudio.delish.view.activities.adapters.FoodAdapter
+import com.delishstudio.delish.view.activities.adapters.CategoryFoodListAdapter
 
 class CategoryMakananBeratActivity: AppCompatActivity() {
     private lateinit var mBinding: ActivityCategoryFoodBinding
@@ -42,7 +42,7 @@ class CategoryMakananBeratActivity: AppCompatActivity() {
         foodList.add(FoodModel("Nasi Padang K", 12, 10000, cat))
         foodList.add(FoodModel("Nasi Padang L", 12, 10000, cat))
 
-        val adapter = FoodAdapter(foodList, cat)
+        val adapter = CategoryFoodListAdapter(foodList, cat)
         recyclerView.adapter = adapter
     }
 }
