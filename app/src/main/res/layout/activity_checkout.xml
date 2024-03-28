@@ -9,266 +9,212 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_above="@+id/checkout_tambah_pesanana_layout"
         android:background="#D9D9D9"
-        app:layout_constraintBottom_toTopOf="@+id/checkout_tambah_pesanana_layout"
+        android:layout_above="@+id/btCheckoutOrderNow"
+        app:layout_constraintBottom_toTopOf="@+id/btCheckoutOrderNow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:visibility="visible">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout6"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout3"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/checkout_delivery"
+                    android:layout_width="165dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/bg_rd_white"
+                    android:backgroundTint="@color/green_dark"
+                    android:elevation="10dp"
+                    android:text="Delivery"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/checkout_pickup"
+                    android:layout_width="165dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="24dp"
+                    android:background="@drawable/bg_rd_white"
+                    android:text="Pickup"
+                    android:textAllCaps="false"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/checkout_delivery"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Alamat penerima"
+                    android:textColor="@color/black_erie"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtUserName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Kania"
+                    android:textColor="@color/black_erie"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+                <TextView
+                    android:id="@+id/checkout_user_phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="+62 012345678"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkout_username" />
+
+                <TextView
+                    android:id="@+id/txtUserAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Jl. Kenangan Mantan No.12 Rt.18 Rw.06 Buah Batu, Bandung, Jawa Barat "
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkout_user_phone_number" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/checkout_ubah_alamat_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_rd_white_with_stroke"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Ubah Alamat"
+                    android:textAllCaps="false"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkout_user_address" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="2dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Catatan pengiriman"
+                    android:textColor="@color/black_erie" />
+
+                <EditText
+                    android:id="@+id/checkout_catatan_pengiriman"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:visibility="visible"
+                    android:layout_height="50dp"
+                    android:background="@drawable/bg_rd_white_with_stroke"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="start|top"
+                    android:hint="Tolong minta alat makan"
+                    android:inputType="textMultiLine"
+                    android:padding="6dp"
+                    android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
-                    <Button
-                        android:id="@+id/checkout_delivery"
-                        android:layout_width="165dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:background="@drawable/bg_rounded_green_button"
-                        android:elevation="10dp"
-                        android:text="Delivery"
-                        android:textAllCaps="false"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Metode pemayaran"
+                    android:textColor="@color/black_erie" />
 
-                    <Button
-                        android:id="@+id/checkout_pickup"
-                        android:layout_width="165dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginEnd="24dp"
-                        android:background="@drawable/bg_rounded_green_button"
-                        android:elevation="10dp"
-                        android:text="Pickup"
-                        android:textAllCaps="false"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/checkout_delivery"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout4"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btCheckoutChoosePayment"
                     android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_rd_white_with_stroke"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Pilih Pembayaran"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green_dark"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:background="@color/white"
-                    android:paddingStart="16dp"
-                    android:paddingTop="8dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="8dp"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Pilih pengiriman"
+                    android:textColor="@color/black_erie" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/checkout_ubah_alamat_btn"
-                        android:layout_width="100dp"
-                        android:layout_height="35dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/background_white_round_corner"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Ganti Alamat"
-                        android:textAllCaps="false"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkout_user_address" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btCheckoutChooseDelivery"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/bg_rd_white_with_stroke"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Pilih Kurir"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green_dark"
+                    android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="Alamat penerima"
-                        android:textColor="@color/black_erie"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/checkout_username"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="Kania"
-                        android:textColor="@color/black_erie"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp">
 
-                    <TextView
-                        android:id="@+id/checkout_user_phone_number"
-                        android:layout_width="wrap_content"
-                        android:layout_height="0dp"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="+62 012345678"
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkout_username" />
-
-                    <TextView
-                        android:id="@+id/checkout_user_address"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Jl. Kenangan Mantan No.12 Rt.18 Rw.06 Buah Batu, Bandung, Jawa Barat "
-                        android:textSize="14sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkout_user_phone_number" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout5"
-                    android:layout_width="409dp"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="2dp"
-                    android:background="@color/white"
-                    android:paddingStart="16dp"
-                    android:paddingTop="8dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="8dp"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
-
-                    <EditText
-                        android:id="@+id/checkout_catatan_pengiriman"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="@drawable/background_white_round_corner"
-                        android:fontFamily="@font/poppins_medium"
-                        android:gravity="start|top"
-                        android:hint="Tolong minta alat makan"
-                        android:inputType="textMultiLine"
-                        android:padding="6dp"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Catatan pengiriman"
-                        android:textColor="@color/black_erie"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Metode pemayaran"
-                        android:textColor="@color/black_erie"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkout_catatan_pengiriman" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/checkout_metode_pembayaran_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:background="@drawable/background_white_round_corner"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Pilih Pembayaran"
-                        android:textAllCaps="false"
-                        android:textColor="@color/green_dark"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Pilih pengiriman"
-                        android:textColor="@color/black_erie"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/checkout_metode_pembayaran_btn" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/checkout_pilih_kurir_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:background="@drawable/background_white_round_corner"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Pilih Kurir"
-                        android:textAllCaps="false"
-                        android:textColor="@color/green_dark"
-                        android:textSize="12sp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout7"
-                    android:layout_width="409dp"
-                    android:layout_height="64dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="2dp"
-                    android:background="@color/white"
-                    android:paddingStart="16dp"
-                    android:paddingTop="8dp"
-                    android:paddingEnd="16dp"
-                    android:paddingBottom="8dp"
-                    android:visibility="visible"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout5">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/checkout_gunakan_voudcher_btn"
-                        android:layout_width="120dp"
-                        android:layout_height="30dp"
-                        android:background="@drawable/background_white_round_corner"
-                        android:fontFamily="@font/poppins_medium"
-                        android:text="Gunakan Voucher"
-                        android:textAllCaps="false"
-                        android:textColor="@color/green_dark"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView12"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
@@ -278,39 +224,44 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView13"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Gunakan voucher kamu"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textView12"
                         app:layout_constraintTop_toBottomOf="@+id/textView12" />
+                </LinearLayout>
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btCheckoutUseVoucher"
+                    android:layout_width="120dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/bg_rd_white_with_stroke"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Gunakan Voucher"
+                    android:textAllCaps="false"
+                    android:textColor="@color/green_dark"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/checkout_ordered_food_recyclerview"
+                android:id="@+id/rcCheckoutOrderedFood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@color/white"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
+                android:paddingHorizontal="16dp"
                 android:visibility="visible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
-                tools:itemCount="20"
+                tools:itemCount="3"
                 tools:listitem="@layout/layout_ordered_food_card" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/checkout_tambah_pesanana_layout"
-        android:layout_width="409dp"
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/btCheckoutOrderNow"
+        android:layout_width="match_parent"
         android:layout_height="110dp"
         android:background="@color/white"
         android:paddingStart="20dp"
@@ -321,31 +272,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:id="@+id/txtCheckoutTotalCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Rp.0.000"
+            android:textColor="@color/green_dark"
+            android:textSize="22sp"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/checkout_pesan_sekarang_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_rounded_green_button"
+            android:background="@drawable/bg_rd_white"
+            android:backgroundTint="@color/green_dark"
             android:text="Pesan Sekarang"
             android:textAllCaps="false"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/checkout_total_cost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_semibold"
-            android:text="Rp.20.000"
-            android:textColor="@color/green_dark"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toTopOf="@+id/checkout_pesan_sekarang_btn"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

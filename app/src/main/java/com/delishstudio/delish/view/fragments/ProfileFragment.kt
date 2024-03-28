@@ -16,21 +16,22 @@ import com.delishstudio.delish.view.activities.PaymentMethodActivity
 class ProfileFragment : Fragment() {
     private lateinit var mBinding: FragmentProfileBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         inflater.inflate(R.layout.fragment_profile, container, false)
         mBinding = FragmentProfileBinding.inflate(inflater, container, false)
-        onSetupButtons()
+
+        return mBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         mBinding.profileUserName.text = User.Main.name
         mBinding.profileUserEmail.text = User.Main.email
         mBinding.profilePhoneNumber.text = User.Main.phone
 
-        return mBinding.root
+        onSetupButtons()
     }
 
     private fun onSetupButtons() {

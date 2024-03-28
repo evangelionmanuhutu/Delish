@@ -23,11 +23,11 @@ class FoodListAdapter(val foodList: List<FoodModel>) : RecyclerView.Adapter<Food
         var buyButton: AppCompatButton
 
         init {
-            name = itemView.findViewById(R.id.food_name)
-            quantity = itemView.findViewById(R.id.food_quantity)
-            category = itemView.findViewById(R.id.food_category)
-            price = itemView.findViewById(R.id.food_price)
-            buyButton = itemView.findViewById(R.id.food_buy_btn)
+            name = itemView.findViewById(R.id.txtFoodListFoodName)
+            quantity = itemView.findViewById(R.id.txtFoodListAvailQuantity)
+            category = itemView.findViewById(R.id.txtFoodListCategory)
+            price = itemView.findViewById(R.id.txtFoodListPrice)
+            buyButton = itemView.findViewById(R.id.btFoodListBuy)
 
             buyButton.setOnClickListener{
                 val intent = Intent(itemView.context, CheckoutActivity::class.java)

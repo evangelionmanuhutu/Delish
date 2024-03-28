@@ -27,7 +27,7 @@ class CategoryMakananBeratActivity: AppCompatActivity() {
     }
 
     private fun setupAdapters(cat: FoodCategory) {
-        val recyclerView = findViewById<RecyclerView>(R.id.cat_food_recyclerView)
+        val recyclerView: RecyclerView = mBinding.rcCategoryFood
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         foodList.add(FoodModel("Nasi Padang A", 12, 10000, cat))

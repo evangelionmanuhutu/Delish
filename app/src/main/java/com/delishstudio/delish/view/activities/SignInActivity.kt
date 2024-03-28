@@ -35,12 +35,12 @@ class SignInActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         mFirebaseAuth = FirebaseAuth.getInstance()
-        mBinding.txtNotRegistered.setOnClickListener {
+        mBinding.btCreateAccount.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
         }
 
-        mBinding.btEmailSignin.setOnClickListener {
+        mBinding.btEmailSignIn.setOnClickListener {
             emailPasswordSignIn()
         }
 
@@ -48,8 +48,8 @@ class SignInActivity : AppCompatActivity() {
     }
 
     private fun emailPasswordSignIn() {
-        val email = mBinding.emailEt.text.toString()
-        val password = mBinding.passET.text.toString()
+        val email = mBinding.etEmail.text.toString()
+        val password = mBinding.etPassword.text.toString()
 
         if (email.isNotEmpty() && password.isNotEmpty()) {
             mFirebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
@@ -88,7 +88,7 @@ class SignInActivity : AppCompatActivity() {
             .build()
         mGooGleSignInClient = GoogleSignIn.getClient(this, gso)
 
-        mBinding.btGoogleSignin.setOnClickListener {
+        mBinding.btGoogleSignIn.setOnClickListener {
             googleSignIn()
         }
     }

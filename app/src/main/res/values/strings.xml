@@ -8,4 +8,5 @@
     <string name="caution_list1">Semua informasi mengenai data pribadi, nomor ponsel, email, alamat, lencana, dan semua postingan forum tidak lagi tersedia di aplikasi Delish.</string>
     <string name="caution_list2">Semua informasi pribadi Anda akan dihapus dari sistem basis data kami.</string>
     <string name="caution_list3">Anda tidak bisa lagi mendaftarkan akun lain di aplikasi Delish menggunakan perangkat yang sama.</string>
+    <string name="terms_of_use_caution">By clicking sign up you are agreeing to the\nTerms of use and the privacy policy</string>
 </resources>

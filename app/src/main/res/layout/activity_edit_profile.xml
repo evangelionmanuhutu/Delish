@@ -1,46 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
         <TextView
-            android:id="@+id/edit_profile_user_kata_sandi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="6dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="************"
-            android:textColor="@color/black_erie"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/edit_profile_kata_sandi_txt"
-            app:layout_constraintStart_toEndOf="@+id/edit_profile_kata_sandi_txt"
-            app:layout_constraintTop_toTopOf="@+id/edit_profile_kata_sandi_txt" />
-
-        <TextView
-            android:id="@+id/edit_profile_kata_sandi_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Kata Sandi"
-            android:textColor="@color/black_erie"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <TextView
-            android:id="@+id/edit_profile_info_profil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
@@ -50,40 +24,135 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/edit_profile_user_name"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="kaniasa@gamail.com"
-            android:textColor="@color/black_erie"
-            android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/edit_profile_name_txt"
-            app:layout_constraintStart_toEndOf="@+id/edit_profile_kata_sandi_txt"
-            app:layout_constraintTop_toTopOf="@+id/edit_profile_name_txt" />
+            android:layout_marginTop="12dp">
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Nama"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp"/>
 
-        <TextView
-            android:id="@+id/edit_profile_name_txt"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/txtUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Nama Pengguna"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/btUsername"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleX="-1"
+                android:src="@drawable/ic_angle_left"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Nama"
-            android:textColor="@color/black_erie"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@+id/edit_profile_kata_sandi_txt"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_profile_info_profil" />
+            android:layout_marginTop="4dp">
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Password"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/txtUserPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="*********"
+                android:layout_weight="1"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp"/>
+            <ImageView
+                android:id="@+id/btUserPassword"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleX="-1"
+                android:src="@drawable/ic_angle_left"/>
+        </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="No. Handphone"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/txtUserPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="*********"
+                android:layout_weight="1"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp"/>
+            <ImageView
+                android:id="@+id/btUserPhone"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleX="-1"
+                android:src="@drawable/ic_angle_left"/>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+            <TextView
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Email"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/txtUserEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_regular"
+                android:text="*********"
+                android:layout_weight="1"
+                android:textColor="@color/black_erie"
+                android:textSize="16sp"/>
+            <ImageView
+                android:id="@+id/btUserEmail"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:scaleX="-1"
+                android:src="@drawable/ic_angle_left"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -94,41 +163,37 @@
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_person" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/btChangeProfilePicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Ubah Profile"
-            android:textColor="@color/green_dark"
-            app:layout_constraintEnd_toEndOf="@+id/edit_profile_user_iamge"
-            app:layout_constraintStart_toStartOf="@+id/edit_profile_user_iamge"
-            app:layout_constraintTop_toBottomOf="@+id/edit_profile_user_iamge" />
+            android:text="Ubah Foto Profil"
+            android:clickable="true"
+            android:textColor="@color/green_dark"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/white"
+        android:elevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/edit_profile_back_button"
+        <ImageView
+            android:id="@+id/btBack"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/ic_angle_left"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

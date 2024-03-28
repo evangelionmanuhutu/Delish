@@ -1,87 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/frameContainer"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools">
-
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".view.activities.auth.RegisterActivity">
+    tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:id="@+id/ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:elevation="5dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
         <TextView
-            android:id="@+id/delish_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/plusjakartasans_extrabold"
             android:text="@string/app_name"
             android:textColor="@color/black"
+            android:layout_weight="1"
             android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"></TextView>
-
+            android:textStyle="bold"/>
         <ImageButton
-            android:id="@+id/cart_btn"
+            android:id="@+id/btCart"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="128dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_cart"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/bell_btn"
-            app:layout_constraintStart_toEndOf="@+id/delish_txt"
-            app:layout_constraintTop_toTopOf="parent"></ImageButton>
-
+            android:src="@drawable/ic_cart"/>
         <ImageButton
-            android:id="@+id/bell_btn"
+            android:id="@+id/btNotification"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginHorizontal="16dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
             android:src="@drawable/ic_notification"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/location_btn"
-            app:layout_constraintStart_toEndOf="@+id/cart_btn"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:scaleType="fitXY"></ImageButton>
-
+            tools:scaleType="fitXY"/>
         <ImageButton
-            android:id="@+id/location_btn"
+            android:id="@+id/btAddress"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="4dp"
             android:background="@android:color/transparent"
             android:scaleType="fitCenter"
-            android:src="@drawable/ic_location"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/bell_btn"
-            app:layout_constraintTop_toTopOf="parent"></ImageButton>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:src="@drawable/ic_location"/>
+    </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -99,117 +65,116 @@
             android:orientation="vertical"
             tools:layout_editor_absoluteY="835dp">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingHorizontal="16dp">
 
                 <EditText
                     android:id="@+id/search_bar"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:background="@drawable/search_bar"
-
-                    android:elevation="5dp"
+                    android:background="@drawable/bg_rd_white_with_stroke"
                     android:hint="Search"
                     android:inputType="text"
-                    android:paddingStart="16dp"
-                    android:paddingEnd="16dp"
+                    android:paddingStart="18dp"
                     android:textColor="@color/main_col"
-                    android:textStyle="italic"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:textStyle="italic"/>
+            </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <HorizontalScrollView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="horizontal"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="12dp"
+                            android:elevation="5dp"
+                            app:cardCornerRadius="24dp">
+
+                            <ImageView
+                                android:id="@+id/banner1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="special_product"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/banner_imagea"/>
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="12dp"
+                            android:elevation="5dp"
+                            app:cardCornerRadius="24dp">
+
+                            <ImageView
+                                android:id="@+id/banner2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:contentDescription="special_product"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/banner_imageb"/>
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+                </HorizontalScrollView>
 
                 <LinearLayout
+                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp">
 
-                    <HorizontalScrollView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:scrollbars="none">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="130dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:orientation="horizontal"
-                            android:paddingStart="12dp"
-                            android:paddingEnd="12dp">
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="12dp"
-                                android:elevation="5dp"
-                                app:cardCornerRadius="24dp">
-
-                                <ImageView
-                                    android:id="@+id/banner1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:contentDescription="special_product"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/banner_imagea"></ImageView>
-                            </androidx.cardview.widget.CardView>
-
-                            <androidx.cardview.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="12dp"
-                                android:elevation="5dp"
-                                app:cardCornerRadius="24dp">
-
-                                <ImageView
-                                    android:id="@+id/banner2"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:contentDescription="special_product"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/banner_imageb"></ImageView>
-                            </androidx.cardview.widget.CardView>
-
-                        </LinearLayout>
-                    </HorizontalScrollView>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <LinearLayout
+                        android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="24dp"
-                        android:orientation="horizontal">
+                        android:layout_marginTop="16dp"
+                        android:gravity="center">
 
-                        <!--============= 1 MAKANAN BERAT =============-->
                         <LinearLayout
                             android:id="@+id/makanan_berat_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="24dp"
                             android:gravity="center"
                             android:orientation="vertical"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <ImageButton
-                                android:id="@+id/makanan_berat_btn"
+                            <LinearLayout
+                                android:id="@+id/btHeavyFood"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginEnd="16dp"
+                                android:layout_marginHorizontal="16dp"
+                                android:gravity="center"
                                 android:background="@drawable/background_light_blue"
-                                android:elevation="5dp" />
+                                android:elevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:src="@drawable/img_heavy_food_cat"/>
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -233,14 +198,19 @@
                             app:layout_constraintStart_toEndOf="@+id/makanan_berat_layout"
                             app:layout_constraintTop_toTopOf="parent">
 
-                            <ImageButton
-                                android:id="@+id/minuman_btn"
+                            <LinearLayout
+                                android:id="@+id/btDrinks"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginEnd="16dp"
+                                android:layout_marginHorizontal="16dp"
                                 android:background="@drawable/background_pink"
-                                android:elevation="5dp" />
+                                android:elevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_drinks_cat"/>
+                            </LinearLayout>
+
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -258,20 +228,20 @@
                             android:id="@+id/camilan_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginEnd="24dp"
                             android:gravity="center"
-                            android:orientation="vertical"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
-
-                            <ImageButton
-                                android:id="@+id/camilan_btn"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:id="@+id/btBeverages"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginEnd="16dp"
+                                android:layout_marginHorizontal="16dp"
                                 android:background="@drawable/background_orange"
-                                android:elevation="5dp" />
+                                android:elevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_beverages_cat"/>
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -284,27 +254,30 @@
                                 android:textStyle="bold" />
                         </LinearLayout>
 
-                        <!--============= 4 MAKANAN VEGAN =============-->
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center">
                         <LinearLayout
-                            android:id="@+id/makanan_vegan_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="24dp"
-                            android:layout_marginTop="4dp"
                             android:gravity="center"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/makanan_berat_layout">
-
-                            <ImageButton
-                                android:id="@+id/makanan_vegan_btn"
+                            android:orientation="vertical">
+                            <LinearLayout
+                                android:id="@+id/btVegan"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginEnd="16dp"
+                                android:layout_marginHorizontal="16dp"
                                 android:background="@drawable/background_orange"
-                                android:elevation="5dp" />
+                                android:elevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_vegan_cat"/>
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -317,27 +290,25 @@
                                 android:textStyle="bold" />
                         </LinearLayout>
 
-                        <!--============= 5 MAKANAN NON HALAL =============-->
                         <LinearLayout
                             android:id="@+id/makanan_non_halal_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
                             android:gravity="center"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/bahan_makanan_layout"
-                            app:layout_constraintStart_toEndOf="@+id/makanan_vegan_layout"
-                            app:layout_constraintTop_toBottomOf="@+id/minuman_layout">
+                            android:orientation="vertical">
 
-                            <ImageButton
-                                android:id="@+id/makanan_non_halal_btn"
+                            <LinearLayout
+                                android:id="@+id/btNonHalal"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginEnd="16dp"
+                                android:layout_marginHorizontal="16dp"
                                 android:background="@drawable/background_pink"
-                                android:elevation="5dp" />
+                                android:elevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_non_halal_food"/>
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -350,27 +321,25 @@
                                 android:textStyle="bold" />
                         </LinearLayout>
 
-                        <!--============= 6 BAHAN MAKANAN =============-->
                         <LinearLayout
                             android:id="@+id/bahan_makanan_layout"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginEnd="24dp"
                             android:gravity="center"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/camilan_layout">
+                            android:orientation="vertical">
 
-                            <ImageButton
-                                android:id="@+id/bahan_makanan_btn"
+                            <LinearLayout
+                                android:id="@+id/btGroceries"
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:layout_marginStart="16dp"
-                                android:layout_marginEnd="16dp"
+                                android:layout_marginHorizontal="16dp"
                                 android:background="@drawable/background_light_blue"
-                                android:elevation="5dp" />
+                                android:elevation="5dp">
+                                <ImageView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:src="@drawable/img_groceries_cat"/>
+                            </LinearLayout>
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -382,71 +351,54 @@
                                 android:textSize="11sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
+                    </LinearLayout>
 
+                </LinearLayout>
 
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                <LinearLayout
+                    android:id="@+id/relativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Sedang diskon"
+                        android:textColor="@color/main_col"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/relativeLayout"
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:background="@android:color/transparent"
+                        android:fontFamily="@font/poppins"
+                        android:text="View All >"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black_erie"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/food_list_recyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/txt_registered"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginEnd="32dp"
-                            android:fontFamily="@font/poppins_semibold"
-                            android:text="Sedang diskon"
-                            android:textColor="@color/main_col"
-                            android:textSize="16dp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/view_all_button"
-                            app:layout_constraintHorizontal_bias="0.2"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/view_all_button"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="16dp"
-                            android:background="@android:color/transparent"
-                            android:fontFamily="@font/poppins"
-                            android:text="View All >"
-                            android:textAllCaps="false"
-                            android:textColor="@color/black_erie"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.0"></com.google.android.material.button.MaterialButton>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="16dp">
-
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/food_list_recyclerView"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:itemCount="10"
-                            tools:listitem="@layout/layout_food_list_card"></androidx.recyclerview.widget.RecyclerView>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                        tools:itemCount="3"
+                        tools:listitem="@layout/layout_food_list_card" />
                 </LinearLayout>
-            </RelativeLayout>
+
+            </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
@@ -464,6 +416,4 @@
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
         app:menu="@menu/bottom_nav_bar">
     </com.google.android.material.bottomnavigation.BottomNavigationView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>

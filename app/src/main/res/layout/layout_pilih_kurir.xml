@@ -13,7 +13,8 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/bg_rounded_green_button"
+        android:background="@drawable/bg_rd_white"
+        android:backgroundTint="@color/green_dark"
         android:text="Konfirmasi"
         android:textAllCaps="false"
         android:textColor="@color/white"
@@ -46,7 +47,7 @@
             android:id="@+id/gosend_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/gosend_icon"
@@ -88,7 +89,7 @@
             android:id="@+id/linkaja_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/grab_express_icon"

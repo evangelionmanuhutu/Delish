@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_bottom_sheet">
+    android:background="@drawable/bg_bottom_sheet">
 
     <TextView
         android:id="@+id/textView4"
@@ -30,7 +30,7 @@
             android:id="@+id/qris_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/qris_icon"
@@ -72,7 +72,7 @@
             android:id="@+id/shopeepay_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/shopeepay_icon"
@@ -114,7 +114,7 @@
             android:id="@+id/bbni_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/bni_icon"
@@ -156,7 +156,7 @@
             android:id="@+id/bbca_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/bca_icon"
@@ -198,7 +198,7 @@
             android:id="@+id/bmandiri_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/mandiri_icon"
@@ -240,7 +240,7 @@
             android:id="@+id/gopay_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/gopay_icon"
@@ -250,7 +250,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_gosend" />
+                app:srcCompat="@drawable/ic_gopay" />
 
             <TextView
                 android:id="@+id/gopaytxt"
@@ -282,7 +282,7 @@
             android:id="@+id/linkaja_card"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/background_white_round_corner">
+            android:background="@drawable/bg_rd_white_with_stroke">
 
             <ImageView
                 android:id="@+id/linkaja_icon"

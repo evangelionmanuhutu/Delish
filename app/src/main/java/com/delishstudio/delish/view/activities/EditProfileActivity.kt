@@ -17,7 +17,7 @@ class EditProfileActivity : AppCompatActivity() {
         supportActionBar?.hide()
         setContentView(binding.root)
 
-        binding.editProfileBackButton.setOnClickListener {
+        binding.btBack.setOnClickListener {
             onBackPressed()
         }
     }

@@ -49,14 +49,14 @@ class DeleteAccountActivity : AppCompatActivity() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.layout_confirmation)
-        val confirmationText = dialog.findViewById<TextView>(R.id.txt_confirmation_status)
+        val confirmationText = dialog.findViewById<TextView>(R.id.txtConfirmationStatus)
         confirmationText.text = "Hapus Akun"
-        val questionText = dialog.findViewById<TextView>(R.id.txt_confirmation_question)
+        val questionText = dialog.findViewById<TextView>(R.id.txtConfirmationQuestion)
         questionText.text = "Apa kamu yakin mau lanjut hapus akun\u2028kamu di aplikasi Delish?"
-        val confirmBtn = dialog.findViewById<AppCompatButton>(R.id.bt_confirm)
+        val confirmBtn = dialog.findViewById<AppCompatButton>(R.id.btConfirm)
         confirmBtn.text = "Hapus"
 
-        val cancelBtn = dialog.findViewById<AppCompatButton>(R.id.bt_cancel)
+        val cancelBtn = dialog.findViewById<AppCompatButton>(R.id.btCancel)
 
         confirmBtn.setOnClickListener {
             FirebaseAuth.getInstance().currentUser?.delete()?.addOnCompleteListener { task->
@@ -69,7 +69,7 @@ class DeleteAccountActivity : AppCompatActivity() {
                 }
                 else
                 {
-                    Toast.makeText(this, "Failed to delete you account", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Failed to delete your account", Toast.LENGTH_SHORT).show()
                     dialog.dismiss()
                 }
             }

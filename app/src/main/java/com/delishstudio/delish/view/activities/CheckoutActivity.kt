@@ -39,7 +39,7 @@ class CheckoutActivity : AppCompatActivity(), CheckoutFoodListAdapter.OnUpdateLi
     }
 
     private fun setupAdapter() {
-        recyclerView = mBinding.checkoutOrderedFoodRecyclerview
+        recyclerView = mBinding.rcCheckoutOrderedFood
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         adapter = CheckoutFoodListAdapter(User.Main)
@@ -48,15 +48,15 @@ class CheckoutActivity : AppCompatActivity(), CheckoutFoodListAdapter.OnUpdateLi
     }
 
     override fun onUpdate() {
-        val totalCostTextView: TextView = findViewById(R.id.checkout_total_cost)
+        val totalCostTextView: TextView = mBinding.txtCheckoutTotalCost
         totalCostTextView.text = User.Main.getFormattedCost()
     }
 
     private fun setupUserBindingData() {
-        var userName: TextView = findViewById(R.id.checkout_username)
-        var userAddress: TextView = findViewById(R.id.checkout_user_address)
-        var userPhone: TextView = findViewById(R.id.checkout_user_phone_number)
-        var totalCost: TextView = findViewById(R.id.checkout_total_cost)
+        var userName: TextView = mBinding.txtUserName
+        var userAddress: TextView = mBinding.txtUserAddress
+        var userPhone: TextView = mBinding.checkoutUserPhoneNumber
+        var totalCost: TextView = mBinding.txtCheckoutTotalCost
 
         userName.text = User.Main.name
         userPhone.text = User.Main.phone
@@ -68,10 +68,10 @@ class CheckoutActivity : AppCompatActivity(), CheckoutFoodListAdapter.OnUpdateLi
         mBinding.checkoutPesanSekarangBtn.setOnClickListener {
             setupPesanSekarangBtn()
         }
-        mBinding.checkoutMetodePembayaranBtn.setOnClickListener {
+        mBinding.btCheckoutChoosePayment.setOnClickListener {
             showMetodePembayaranDialog()
         }
-        mBinding.checkoutPilihKurirBtn.setOnClickListener() {
+        mBinding.btCheckoutChooseDelivery.setOnClickListener() {
             showPilihKurirDialog()
         }
     }

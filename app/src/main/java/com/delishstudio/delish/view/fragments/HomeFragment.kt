@@ -22,6 +22,7 @@ import com.delishstudio.delish.view.activities.CategoryVeganActivity
 import com.delishstudio.delish.view.activities.adapters.FoodListAdapter
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -29,9 +30,11 @@ class HomeFragment : Fragment() {
     ): View? {
         inflater.inflate(R.layout.fragment_home, container, false)
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-        val view = binding.root
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val recyclerView: RecyclerView = view.findViewById(R.id.food_list_recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(activity)
 
@@ -45,42 +48,40 @@ class HomeFragment : Fragment() {
 
         recyclerView.adapter = FoodListAdapter(foods)
         setupButtons()
-
-        return view
     }
 
     private fun setupButtons() {
-        binding.makananBeratBtn.setOnClickListener {
+        binding.btHeavyFood.setOnClickListener {
             val intent = Intent(activity, CategoryMakananBeratActivity::class.java)
             startActivity(intent)
         }
 
-        binding.minumanBtn.setOnClickListener {
+        binding.btDrinks.setOnClickListener {
             val intent = Intent(activity, CategoryMinumanActivity::class.java)
             startActivity(intent)
         }
 
-        binding.camilanBtn.setOnClickListener {
+        binding.btBeverages.setOnClickListener {
             val intent = Intent(activity, CategoryCamilanActivity::class.java)
             startActivity(intent)
         }
 
-        binding.makananVeganBtn.setOnClickListener {
+        binding.btVegan.setOnClickListener {
             val intent = Intent(activity, CategoryVeganActivity::class.java)
             startActivity(intent)
         }
 
-        binding.makananNonHalalBtn.setOnClickListener {
+        binding.btNonHalal.setOnClickListener {
             val intent = Intent(activity, CategoryNonHalalActivity::class.java)
             startActivity(intent)
         }
 
-        binding.bahanMakananBtn.setOnClickListener {
+        binding.btGroceries.setOnClickListener {
             val intent = Intent(activity, CategoryBahanMakananActivity::class.java)
             startActivity(intent)
         }
 
-        binding.cartBtn.setOnClickListener {
+        binding.btCart.setOnClickListener {
             val intent = Intent(activity, CartActivity::class.java)
             startActivity(intent)
         }

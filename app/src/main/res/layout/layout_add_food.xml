@@ -1,127 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_add_food"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/background_bottom_sheet">
+    android:background="@drawable/bg_bottom_sheet">
 
-    <EditText
-        android:id="@+id/bs_order_msg"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/background_white_round_corner"
-        android:fontFamily="@font/poppins_medium"
-        android:gravity="start|top"
-        android:hint="Tolong minta alat makan"
-        android:inputType="textMultiLine"
-        android:padding="6dp"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-    <TextView
-        android:id="@+id/bs_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Rp.10.000"
-        android:textColor="@color/green_dark"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/image_example"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/bs_nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="Nasi Padang"
-        android:textColor="@color/green_dark"
-        android:textSize="18sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/bs_alamat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="RM Padang Mahkota"
-        android:textColor="@color/green_dark"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/bs_nama"
-        app:layout_constraintTop_toBottomOf="@+id/bs_nama" />
-
-    <Button
-        android:id="@+id/bs_increment_btn"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:background="@android:color/transparent"
-        android:foreground="@drawable/ic_plus_button"
-        app:layout_constraintBottom_toBottomOf="@+id/bs_decrement_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bs_decrement_btn" />
-
-    <TextView
-        android:id="@+id/bs_counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="1"
-        android:textColor="@color/black_erie"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/bs_decrement_btn"
-        app:layout_constraintEnd_toStartOf="@+id/bs_increment_btn"
-        app:layout_constraintStart_toEndOf="@+id/bs_decrement_btn"
-        app:layout_constraintTop_toTopOf="@+id/bs_decrement_btn"></TextView>
-
-    <Button
-        android:id="@+id/bs_decrement_btn"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="52dp"
-        android:background="@android:color/transparent"
-        android:foreground="@drawable/ic_min_button"
-        app:layout_constraintBottom_toBottomOf="@+id/bs_price"
-        app:layout_constraintEnd_toStartOf="@+id/bs_increment_btn"
-        app:layout_constraintTop_toTopOf="@+id/bs_price" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_regular"
-        android:text=" Catatan buat restoran"
-        android:textColor="@color/black_erie"
-        app:layout_constraintStart_toStartOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/bs_price" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bs_tambah_pesanan_btn"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bg_rounded_green_button"
-        android:text="Tambah Pesanan"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/bs_order_msg"
-        app:layout_constraintStart_toStartOf="@+id/bs_order_msg"
-        app:layout_constraintTop_toBottomOf="@+id/bs_order_msg" />
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/foodImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/image_example" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp">
+                <TextView
+                    android:id="@+id/txtFoodName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:text="Nasi Padang"
+                    android:textColor="@color/green_dark"
+                    android:textSize="18sp" />
+                <TextView
+                    android:id="@+id/txtFoodAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="RM Padang Mahkota"
+                    android:textColor="@color/green_dark"
+                    android:textSize="12sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="4dp"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/txtPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="Rp.10.000"
+                android:textColor="@color/green_dark"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+            <Button
+                android:id="@+id/btDecrement"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@android:color/transparent"
+                android:foreground="@drawable/bt_minus_circle" />
+
+            <TextView
+                android:id="@+id/txtCounter"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/black_erie"
+                android:textSize="18sp"/>
+            <Button
+                android:id="@+id/btIncrement"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@android:color/transparent"
+                android:foreground="@drawable/bt_plus_circle" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Catatan buat restoran"
+            android:textColor="@color/black_erie"/>
+        <EditText
+            android:id="@+id/etRestaurantMsg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_rd_white_with_stroke"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingStart="16dp"
+            android:gravity="start|top"
+            android:hint="Tolong minta alat makan"
+            android:inputType="textMultiLine"
+            android:padding="6dp"
+            android:textSize="12sp" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btAddFoodOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_rd_white"
+            android:backgroundTint="@color/green_dark"
+            android:text="Tambah Pesanan"
+            android:textAllCaps="false"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -54,15 +54,15 @@ class AccountSettingsActivity : AppCompatActivity() {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.layout_confirmation)
-        val confirmationText = dialog.findViewById<TextView>(R.id.txt_confirmation_status)
+        val confirmationText = dialog.findViewById<TextView>(R.id.txtConfirmationStatus)
         confirmationText.text = "Konfirmasi Keluar"
-        val questionText = dialog.findViewById<TextView>(R.id.txt_confirmation_question)
+        val questionText = dialog.findViewById<TextView>(R.id.txtConfirmationQuestion)
         questionText.text = "Apakah kamu yakin mau keluar?"
 
-        val confirmBtn = dialog.findViewById<AppCompatButton>(R.id.bt_confirm)
+        val confirmBtn = dialog.findViewById<AppCompatButton>(R.id.btConfirm)
         confirmBtn.text = "Keluar"
 
-        val cancelBtn = dialog.findViewById<AppCompatButton>(R.id.bt_cancel)
+        val cancelBtn = dialog.findViewById<AppCompatButton>(R.id.btCancel)
 
         confirmBtn.setOnClickListener{
             FirebaseAuth.getInstance().signOut()

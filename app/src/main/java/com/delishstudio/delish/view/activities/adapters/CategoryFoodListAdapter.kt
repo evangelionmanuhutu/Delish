@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.widget.EditText
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +23,6 @@ import com.delishstudio.delish.view.activities.CheckoutActivity
 
 class CategoryFoodListAdapter(val foodList: ArrayList<FoodModel>, private val cat: FoodCategory) : RecyclerView.Adapter<CategoryFoodListAdapter.FoodHolder>() {
 
-    final var m_Category = cat
     inner class FoodHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var name: TextView
         var quantity: TextView
@@ -31,34 +31,20 @@ class CategoryFoodListAdapter(val foodList: ArrayList<FoodModel>, private val ca
         var addButton: AppCompatButton
         var address: TextView
         var distance: TextView
-        var bg: ConstraintLayout
+        var bg: LinearLayout
         var ratingNumber: TextView
-
         var isDialogShown = false
 
         init {
-            if (m_Category == FoodCategory.MYSTERY_BOX) {
-                name = itemView.findViewById(R.id.mystery_box_nama_makanan)
-                quantity = itemView.findViewById(R.id.mystery_box_quantity)
-                category = itemView.findViewById(R.id.mystery_box_category)
-                price = itemView.findViewById(R.id.mystery_box_price)
-                addButton = itemView.findViewById(R.id.mystery_box_add_button)
-                address = itemView.findViewById(R.id.mystery_box_alamat)
-                distance = itemView.findViewById(R.id.mystery_box_distance)
-                bg = itemView.findViewById(R.id.mystery_box_image_frame)
-                ratingNumber = itemView.findViewById(R.id.mystery_box_rating_number)
-            }
-            else {
-                name = itemView.findViewById(R.id.cat_food_nama_makanan)
-                quantity = itemView.findViewById(R.id.cat_food_quantity)
-                category = itemView.findViewById(R.id.cat_food_category)
-                price = itemView.findViewById(R.id.cat_food_price)
-                addButton = itemView.findViewById(R.id.cat_food_add_button)
-                address = itemView.findViewById(R.id.cat_food_alamat)
-                distance = itemView.findViewById(R.id.cat_food_distance)
-                bg = itemView.findViewById(R.id.cat_food_image_frame)
-                ratingNumber = itemView.findViewById(R.id.cat_food_rating_number)
-            }
+            name = itemView.findViewById(R.id.cat_food_foodname)
+            quantity = itemView.findViewById(R.id.cat_food_quantity)
+            category = itemView.findViewById(R.id.cat_food_category)
+            price = itemView.findViewById(R.id.cat_food_price)
+            addButton = itemView.findViewById(R.id.cat_food_add_button)
+            address = itemView.findViewById(R.id.cat_food_alamat)
+            distance = itemView.findViewById(R.id.cat_food_distance)
+            bg = itemView.findViewById(R.id.cat_food_image_frame)
+            ratingNumber = itemView.findViewById(R.id.cat_food_rating_number)
 
             addButton.setOnClickListener {
                 addButtonOnClickListener()
@@ -77,13 +63,13 @@ class CategoryFoodListAdapter(val foodList: ArrayList<FoodModel>, private val ca
             dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
             dialog.setContentView(R.layout.layout_add_food)
 
-            val nama = dialog.findViewById<TextView>(R.id.bs_nama)
-            val price = dialog.findViewById<TextView>(R.id.bs_price)
-            var counter = dialog.findViewById<TextView>(R.id.bs_counter)
-            val orderMsg = dialog.findViewById<EditText>(R.id.bs_order_msg)
-            val increment = dialog.findViewById<AppCompatButton>(R.id.bs_increment_btn)
-            val decrement = dialog.findViewById<AppCompatButton>(R.id.bs_decrement_btn)
-            val orderBtn = dialog.findViewById<AppCompatButton>(R.id.bs_tambah_pesanan_btn)
+            val nama = dialog.findViewById<TextView>(R.id.txtFoodName)
+            val price = dialog.findViewById<TextView>(R.id.txtPrice)
+            var counter = dialog.findViewById<TextView>(R.id.txtCounter)
+            val orderMsg = dialog.findViewById<EditText>(R.id.etRestaurantMsg)
+            val increment = dialog.findViewById<AppCompatButton>(R.id.btIncrement)
+            val decrement = dialog.findViewById<AppCompatButton>(R.id.btDecrement)
+            val orderBtn = dialog.findViewById<AppCompatButton>(R.id.btAddFoodOrder)
 
             val currentFood = foodList[bindingAdapterPosition]
 
@@ -138,16 +124,7 @@ class CategoryFoodListAdapter(val foodList: ArrayList<FoodModel>, private val ca
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodHolder {
-        var layoutID = 0
-
-        if (m_Category == FoodCategory.MYSTERY_BOX) {
-            layoutID = R.layout.layout_mystery_box_card
-        }
-        else {
-            layoutID = R.layout.layout_category_food_card
-        }
-
-        return FoodHolder(LayoutInflater.from(parent.context).inflate(layoutID, parent, false))
+        return FoodHolder(LayoutInflater.from(parent.context).inflate( R.layout.layout_category_food_card, parent, false))
     }
 
     override fun onBindViewHolder(holder: FoodHolder, position: Int) {

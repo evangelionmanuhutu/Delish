@@ -7,13 +7,13 @@ class FoodModel(name: String, availableQua: Int, price: Int, cat: FoodCategory, 
     var name: String = name
     var price: Int = price
     var availableQua: Int = availableQua
-    lateinit var imgSrc : String
     var distance: Int = 10
     var address: String = "Rumah Makan"
     var rating: Double = 0.0
     var category: FoodCategory = cat
     var quaUnit: String = unit
     var buyQuantity: Int = 0
+    lateinit var imgSrc : String
     lateinit var orderMsgToRestaurant: String
 
     fun getCategoryString(): String {

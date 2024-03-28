@@ -22,20 +22,22 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/white"
+        android:elevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/cart_back_button"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
+        <ImageView
+            android:id="@+id/cartBackButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="16dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/ic_angle_left"
+            android:clickable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
         <TextView
             android:id="@+id/cart_title"
@@ -78,24 +80,35 @@
             android:layout_marginStart="16dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Rp.10.000"
+            android:text="Rp.0.000"
             android:textColor="@color/green_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatButton
+        <LinearLayout
             android:id="@+id/bt_beli"
             android:layout_width="120dp"
             android:layout_height="40dp"
             android:layout_marginEnd="16dp"
-            android:background="@drawable/bg_rounded_green_button"
-            android:elevation="5dp"
-            android:text="Beli"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/bg_rd_white"
+            android:backgroundTint="@color/green_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            android:clickable="true"
+            app:cardCornerRadius="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Beli"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        </LinearLayout>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

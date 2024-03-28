@@ -7,13 +7,17 @@
     tools:context=".view.activities.AuthBoardingActivity">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="32dp"
-        android:scaleType="fitXY"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:scaleType="fitCenter"
         android:scrollbarAlwaysDrawHorizontalTrack="false"
         android:scrollbarAlwaysDrawVerticalTrack="false"
         android:src="@drawable/img_food"
+        app:layout_constraintBottom_toTopOf="@+id/bt_signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/motto"></ImageView>
@@ -78,7 +82,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/green_dark"
+            android:background="@drawable/bg_rd_white_with_stroke"
             android:padding="10dp">
 
             <TextView
@@ -87,7 +91,7 @@
                 android:layout_gravity="center"
                 android:text="Log In"
                 android:textAlignment="center"
-                android:textColor="@android:color/white"
+                android:textColor="@color/black_erie"
                 android:textSize="16sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -97,7 +101,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
 
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:src="@drawable/ic_app_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

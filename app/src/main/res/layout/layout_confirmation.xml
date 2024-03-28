@@ -1,71 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="32dp"
-    android:background="@drawable/background_confirmation_popup"
+    android:gravity="center_horizontal"
+    android:layout_marginHorizontal="32dp"
+    android:background="@drawable/bg_rd_white_with_stroke"
     android:padding="16dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="348dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        app:flow_horizontalAlign="center"
-        app:flow_verticalAlign="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_confirmation_question">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_cancel"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="60dp"
-            android:background="@drawable/background_green_round_corner"
-            android:text="Batal"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_confirm"
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:layout_marginEnd="60dp"
-            android:background="@drawable/background_white_round_corner"
-            android:text="Konfirmasi"
-            android:textAllCaps="false"
-            android:textColor="@color/black_erie"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <TextView
-        android:id="@+id/txt_confirmation_question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_semibold"
-        android:text="Anda Yakin?"
-        android:textColor="@color/black_erie"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_confirmation_status" />
-
-    <TextView
-        android:id="@+id/txt_confirmation_status"
+        android:id="@+id/txtConfirmationStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_semibold"
         android:text="Konfirmasi Keluar"
         android:textColor="@color/black_erie"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="18sp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/txtConfirmationQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Anda Yakin?"
+        android:textColor="@color/black_erie"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btCancel"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rd_white"
+            android:backgroundTint="@color/green_dark"
+            android:text="Batal"
+            android:textAllCaps="false"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btConfirm"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginHorizontal="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_rd_white_with_stroke"
+            android:text="Konfirmasi"
+            android:textAllCaps="false"
+            android:textColor="@color/black_erie"/>
+    </LinearLayout>
+
+</LinearLayout>
